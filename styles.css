@@ -1,0 +1,487 @@
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  color-scheme: light;
+  --ink: #17201c;
+  --muted: #66736d;
+  --line: #d9e0dc;
+  --panel: #ffffff;
+  --paper: #f4f7f3;
+  --accent: #236a4b;
+  --accent-strong: #164c35;
+  --accent-soft: #dcebe2;
+  --sand: #e7d8bd;
+  --sky: #dbe8f3;
+  --danger: #8b3a2d;
+  --shadow: 0 12px 32px rgba(28, 44, 35, 0.12);
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(219, 232, 243, 0.72), rgba(244, 247, 243, 0.96) 240px),
+    var(--paper);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
+
+.app-shell {
+  width: min(100%, 520px);
+  margin: 0 auto;
+  padding: 18px 14px 28px;
+}
+
+.app-header {
+  padding: 12px 2px 14px;
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p,
+figure {
+  margin: 0;
+}
+
+h1 {
+  color: var(--ink);
+  font-size: clamp(28px, 9vw, 40px);
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.lead {
+  margin-top: 10px;
+  color: #435149;
+  font-size: 14px;
+}
+
+.notice {
+  margin: 2px 0 14px;
+  padding: 12px 13px;
+  border: 1px solid #e3cab6;
+  border-radius: 8px;
+  background: #fff6eb;
+  color: #69402b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.flow {
+  display: grid;
+  gap: 12px;
+}
+
+.panel,
+.result-section {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.panel {
+  padding: 14px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 12px;
+}
+
+.section-title span {
+  display: grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.section-title h2,
+.result-header h2 {
+  font-size: 17px;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+.upload-box {
+  display: grid;
+  min-height: 150px;
+  place-items: center;
+  padding: 18px;
+  border: 2px dashed #9eb4a7;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fbfdfb, #edf5ef);
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-box input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.upload-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 8px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.upload-box strong {
+  font-size: 16px;
+}
+
+.upload-box small {
+  display: block;
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.work-option {
+  position: relative;
+}
+
+.work-option input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.work-option span {
+  display: flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cdd7d1;
+  border-radius: 8px;
+  background: #fbfcfb;
+  color: #2f3d36;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.work-option input:checked + span {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.field-stack {
+  display: grid;
+  gap: 11px;
+}
+
+.field-stack label {
+  display: grid;
+  gap: 5px;
+  color: #3d4a43;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+select {
+  width: 100%;
+  min-height: 46px;
+  padding: 0 38px 0 12px;
+  border: 1px solid #c9d3ce;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--accent) 50%),
+    linear-gradient(135deg, var(--accent) 50%, transparent 50%);
+  background-position:
+    calc(100% - 18px) 20px,
+    calc(100% - 12px) 20px;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+.generate-button {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 900;
+  box-shadow: 0 12px 24px rgba(35, 106, 75, 0.25);
+  cursor: pointer;
+}
+
+.generate-button:disabled {
+  background: #aab8b0;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+.result-section {
+  margin-top: 14px;
+  padding: 14px;
+}
+
+.result-header {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.result-header p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.compare-grid {
+  display: grid;
+  gap: 11px;
+}
+
+.preview-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 230px;
+  border: 1px solid #cdd7d1;
+  border-radius: 8px;
+  background: #eef3f0;
+}
+
+.preview-frame figcaption {
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  left: 9px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(23, 32, 28, 0.72);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.preview-frame img,
+.preview-frame canvas {
+  display: block;
+  width: 100%;
+  min-height: 230px;
+  max-height: 430px;
+  object-fit: cover;
+}
+
+.preview-frame canvas {
+  height: auto;
+  touch-action: none;
+  user-select: none;
+}
+
+.preview-frame.empty img,
+.preview-frame.empty canvas {
+  display: none;
+}
+
+.preview-placeholder {
+  display: grid;
+  min-height: 230px;
+  place-items: center;
+  color: #7b8982;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.preview-frame:not(.empty) .preview-placeholder {
+  display: none;
+}
+
+.edit-panel {
+  display: grid;
+  gap: 11px;
+  margin-top: 12px;
+}
+
+.edit-panel.hidden {
+  display: none;
+}
+
+.edit-toolbar,
+.removal-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.edit-toolbar button,
+.removal-actions button,
+.layer-chip {
+  min-height: 42px;
+  border: 1px solid #c8d4ce;
+  border-radius: 8px;
+  background: #f9fbfa;
+  color: #26352e;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.edit-toolbar button:active,
+.removal-actions button:active,
+.layer-chip:active {
+  transform: scale(0.98);
+}
+
+.edit-toolbar .danger-button,
+.removal-actions button:nth-child(3) {
+  border-color: #d7aaa2;
+  background: #fff1ef;
+  color: var(--danger);
+}
+
+.removal-panel {
+  display: grid;
+  gap: 10px;
+  padding: 11px;
+  border: 1px solid #e4c8c2;
+  border-radius: 8px;
+  background: #fff8f6;
+}
+
+.removal-actions button.active {
+  border-color: #c94d3f;
+  background: #ffe0dc;
+  color: #8b2c22;
+  box-shadow: inset 0 0 0 1px #c94d3f;
+}
+
+.brush-control {
+  display: grid;
+  gap: 5px;
+  color: #744037;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.brush-control input[type="range"] {
+  width: 100%;
+  accent-color: #c94d3f;
+}
+
+.layer-list {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  scrollbar-width: none;
+}
+
+.layer-list::-webkit-scrollbar {
+  display: none;
+}
+
+.layer-chip {
+  flex: 0 0 auto;
+  padding: 0 12px;
+}
+
+.layer-chip.active {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.range-grid {
+  display: grid;
+  gap: 9px;
+}
+
+.range-grid label {
+  display: grid;
+  gap: 5px;
+  color: #3d4a43;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.range-grid input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+@media (min-width: 760px) {
+  .app-shell {
+    width: min(100% - 32px, 980px);
+  }
+
+  .flow {
+    grid-template-columns: 1.1fr 1fr;
+    align-items: start;
+  }
+
+  .panel:nth-child(3),
+  .generate-button {
+    grid-column: 1 / -1;
+  }
+
+  .field-stack {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .compare-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .range-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
