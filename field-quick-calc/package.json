@@ -1,0 +1,23 @@
+{
+  "name": "field-quick-calc",
+  "version": "0.1.0",
+  "description": "DIY-focused imperial jobsite calculator prototype",
+  "main": "index.js",
+  "scripts": {
+    "build": "node scripts/build-static.mjs",
+    "start": "npm run build && python3 -m http.server 3004 -d dist",
+    "cap:init": "cap init \"Field Quick Calc\" \"com.genbatoolbox.fieldquickcalc\" --web-dir dist",
+    "cap:sync": "npm run build && cap sync",
+    "cap:sync:ios": "npm run build && cap sync ios",
+    "cap:sync:android": "npm run build && cap sync android"
+  },
+  "keywords": [
+    "diy",
+    "construction",
+    "calculator",
+    "imperial"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

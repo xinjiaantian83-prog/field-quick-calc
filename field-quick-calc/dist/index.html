@@ -225,14 +225,21 @@
         </div>
       </div>
       <div class="diagram stairs-diagram">
-        <svg viewBox="0 0 360 190" role="img" aria-label="Stair diagram">
+        <svg viewBox="0 0 360 220" role="img" aria-label="Stair diagram">
           <polyline id="stairShape" points="" class="line-glow fill-none"/>
-          <line id="stairRunLine" x1="58" y1="150" x2="293" y2="150" class="line"/>
-          <line id="stairRiseLine" x1="293" y1="150" x2="293" y2="50" class="measure"/>
-          <text x="137" y="172">Total run</text>
-          <text x="302" y="103">Total rise</text>
+          <line id="stairStringerLine" class="stringer-guide"/>
+          <line id="stairRunLine" x1="58" y1="154" x2="293" y2="154" class="line"/>
+          <line id="stairRiseLine" x1="293" y1="154" x2="293" y2="50" class="measure"/>
+          <line id="stairTreadLine" class="step-measure"/>
+          <line id="stairStepRiseLine" class="step-measure"/>
+          <text id="stairRunLabel" x="137" y="179">Total run</text>
+          <text id="stairRiseLabel" x="302" y="103">Total rise</text>
+          <text id="stairTreadLabel" class="step-label">Tread</text>
+          <text id="stairStepRiseLabel" class="step-label">Rise</text>
+          <text id="stairCountLabel" class="section-note" x="62" y="28">6 steps shown</text>
         </svg>
       </div>
+      <p id="stairNotice" class="soft-notice" hidden></p>
       <div class="results">
         <div class="result big"><span>Rise per step</span><strong id="stairRiseEach">--</strong><em>in</em></div>
         <div class="result"><span>Total run</span><strong id="stairRun">--</strong><em>ft</em></div>

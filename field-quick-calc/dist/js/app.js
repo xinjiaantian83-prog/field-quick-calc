@@ -167,15 +167,17 @@ function calcStairs() {
   $("stairRiseEach").textContent = riseEach > 0 ? fmt(riseEach, 2) : "--";
   $("stairRun").textContent = totalRunIn > 0 ? fmt(totalRunIn / 12, 2) : "--";
   $("stairStringer").textContent = stringerFt > 0 ? fmt(stringerFt, 2) : "--";
-  drawStairs(steps);
+  drawStairs({ steps, riseEach, tread, totalRise, totalRunIn });
+  updateStairNotice(riseEach, tread, steps);
 }
 
-function drawStairs(steps) {
-  const visibleSteps = Math.min(Math.max(steps || 6, 1), 12);
-  const left = 58;
-  const right = 293;
-  const bottom = 150;
-  const top = 50;
+function drawStairs(data) {
+  const inputSteps = data.steps || 6;
+  const visibleSteps = Math.min(Math.max(inputSteps, 1), 14);
+  const left = 54;
+  const right = 292;
+  const bottom = 154;
+  const top = 48;
   const stepW = (right - left) / visibleSteps;
   const stepH = (bottom - top) / visibleSteps;
   const points = [[left, bottom]];
@@ -188,10 +190,28 @@ function drawStairs(steps) {
   }
 
   $("stairShape").setAttribute("points", points.map(([x, y]) => `${fmtSvg(x)},${fmtSvg(y)}`).join(" "));
+  setLine("stairStringerLine", left, bottom, right, top);
+  setLine("stairTreadLine", left, bottom + 18, left + stepW, bottom + 18);
+  setLine("stairStepRiseLine", left + stepW, bottom, left + stepW, bottom - stepH);
   $("stairRunLine").setAttribute("x2", fmtSvg(right));
   $("stairRiseLine").setAttribute("x1", fmtSvg(right));
   $("stairRiseLine").setAttribute("x2", fmtSvg(right));
   $("stairRiseLine").setAttribute("y2", fmtSvg(top));
+  setText("stairRunLabel", left + (right - left) / 2 - 36, bottom + 42, "Total run");
+  setText("stairRiseLabel", right + 8, top + (bottom - top) / 2, "Total rise");
+  setText("stairTreadLabel", left + stepW / 2 - 14, bottom + 35, data.tread > 0 ? `${fmt(data.tread, 1)} in tread` : "Tread");
+  setText("stairStepRiseLabel", left + stepW + 9, bottom - stepH / 2 + 4, data.riseEach > 0 ? `${fmt(data.riseEach, 1)} in rise` : "Rise");
+  $("stairCountLabel").textContent = inputSteps > visibleSteps ? `${visibleSteps} of ${inputSteps} steps shown` : `${visibleSteps} steps shown`;
+}
+
+function updateStairNotice(riseEach, tread, steps) {
+  const notice = $("stairNotice");
+  const messages = [];
+  if (steps > 14) messages.push("Showing a simplified stair sketch so the steps stay readable.");
+  if (riseEach > 0 && (riseEach < 4.5 || riseEach > 8.5)) messages.push("Rise per step looks unusual. Double-check your layout and local requirements.");
+  if (tread > 0 && tread < 8) messages.push("Tread depth looks tight for a typical DIY stair.");
+  notice.hidden = messages.length === 0;
+  notice.textContent = messages.join(" ");
 }
 
 function fmtSvg(value) {
