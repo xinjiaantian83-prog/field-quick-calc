@@ -1,0 +1,453 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "HP・比較ページ・SEO・SNS・EC・見積作成で共通利用する商品マスタ",
+  "last_updated": "2026-06-28",
+  "currency": "JPY",
+  "tax_rate": 0.1,
+  "data_policy": {
+    "primary_source": "メーカー公式ページを優先",
+    "unknown_value": "未確認",
+    "notes": "推測で仕様・価格・付属品を補完しない。SEO/SNS文は公式確認済みの基本情報を元にした制作文。"
+  },
+  "products": [
+    {
+      "id": "eg3-ab-pk",
+      "basic": {
+        "product_name": "アンティークブリックス ピザ窯",
+        "model_number": "EG3-AB-PK",
+        "series": "アンティークブリックス",
+        "manufacturer": "オンリーワンクラブ",
+        "category": "ピザ窯",
+        "status": "販売中"
+      },
+      "pricing": {
+        "manufacturer_price_ex_tax": 279800,
+        "manufacturer_price_in_tax": 307780,
+        "purchase_rate": "未確認",
+        "purchase_price": "未確認",
+        "selling_price": "未確認",
+        "lowest_online_price": "未確認",
+        "gross_profit_amount": "未確認",
+        "gross_profit_rate": "未確認"
+      },
+      "size": {
+        "width_mm": 515,
+        "depth_mm": 465,
+        "height_mm": 465,
+        "weight_kg": "未確認"
+      },
+      "materials": {
+        "body": "耐火煉瓦",
+        "door": "鉄",
+        "hardware": "未確認",
+        "refractory_material": "耐火煉瓦",
+        "coating": "耐熱塗装"
+      },
+      "accessories": {
+        "standard": [
+          "耐熱接着剤"
+        ],
+        "options": [
+          "未確認"
+        ]
+      },
+      "cooking_support": {
+        "pizza": "○",
+        "bread": "△",
+        "bbq": "△",
+        "roast": "△",
+        "gratin": "△",
+        "smoking": "×",
+        "dutch_oven": "△"
+      },
+      "installation": {
+        "required_space": "本体寸法以上。火気・排煙・作業スペースを確保。詳細未確認。",
+        "foundation": "重量物・火気使用に適した安定した屋外設置面が必要。詳細未確認。",
+        "installation_method": "屋外据置。ドーム部と胴体を分割納品し、付属の耐熱接着剤で固定。",
+        "split_delivery": "ドーム部と胴体の分割納品",
+        "assembly_method": "付属の耐熱接着剤で固定",
+        "recommended_location": "庭、テラス、アウトドアキッチンなど屋外の火気使用可能な場所"
+      },
+      "warnings": {
+        "smoke": "発煙・排煙に配慮。近隣や建物開口部への影響を確認。",
+        "ash": "灰の処理が必要。完全消火後に清掃。",
+        "fire": "火気使用商品のため、周囲の安全確認が必要。",
+        "weight": "重量未確認。搬入経路と設置面の強度確認が必要。",
+        "combustibles": "可燃物から十分に離して設置。",
+        "maintenance": "使用後の灰・煤の清掃が必要。詳細未確認。",
+        "warranty": "未確認",
+        "other": "目地部にヘアークラックが入る場合があるが、品質上問題ない旨の注意あり。"
+      },
+      "seo": {
+        "title": "アンティークブリックス ピザ窯 EG3-AB-PK｜屋外用石窯",
+        "meta_description": "オンリーワンクラブのアンティークブリックス ピザ窯 EG3-AB-PK。耐火煉瓦の本格的な屋外用ピザ窯です。",
+        "catch_copy": "庭で楽しむ、本格アンティーク調ピザ窯。",
+        "description_30": "耐火煉瓦の屋外用ピザ窯。",
+        "description_100": "アンティークブリックス ピザ窯は、耐火煉瓦の質感を活かした屋外用ピザ窯です。庭やテラスで本格調理を楽しめます。",
+        "description_300": "オンリーワンクラブのアンティークブリックス ピザ窯 EG3-AB-PKは、耐火煉瓦を使用した屋外用の本格ピザ窯です。アンティーク調の雰囲気が庭やテラスに馴染み、アウトドアキッチンの主役として使えます。ドーム部と胴体は分割納品され、付属の耐熱接着剤で固定する仕様です。火気・煙・重量に配慮した設置計画が必要です。"
+      },
+      "sns": {
+        "instagram": "庭で焼くピザは、家の楽しみ方を変えてくれます。オンリーワンクラブのアンティークブリックス ピザ窯は、耐火煉瓦の質感が魅力の屋外用ピザ窯。アウトドアキッチンや庭時間を本格的にしたい方におすすめです。#ピザ窯 #アウトドアキッチン #庭づくり",
+        "tiktok": "庭にピザ窯がある暮らし。耐火煉瓦のアンティークブリックス ピザ窯で、外構が“使う庭”に変わります。",
+        "google_business": "オンリーワンクラブのアンティークブリックス ピザ窯 EG3-AB-PKを商品マスタへ追加しました。屋外用の本格ピザ窯として、庭やテラスでの調理空間づくりに向いた商品です。",
+        "facebook": "アンティークブリックス ピザ窯 EG3-AB-PKは、耐火煉瓦の質感を活かした屋外用ピザ窯です。庭やテラスで本格的なアウトドア調理を楽しみたい方に向いています。"
+      },
+      "comparison_rating": {
+        "visual_appeal": 5,
+        "pizza_performance": 5,
+        "bbq_performance": 2,
+        "smoking_performance": 1,
+        "ease_of_use": 3,
+        "beginner_friendly": 3,
+        "maintenance": 3,
+        "recommendation": 4
+      },
+      "photos": {
+        "main": {
+          "url": "images/eg3-ab-pk/main/main.jpg",
+          "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abpk.html",
+          "save_path": "images/eg3-ab-pk/main/"
+        },
+        "front": "未確認",
+        "left": "未確認",
+        "right": "未確認",
+        "back": "未確認",
+        "door_open": "未確認",
+        "inside": "未確認",
+        "usage_image": "未確認",
+        "pizza_cooking": "未確認",
+        "bbq_cooking": "未確認",
+        "smoking_cooking": "未確認",
+        "dimension_drawing": "未確認",
+        "catalog_image": "未確認",
+        "installation_example": "未確認",
+        "gallery": [
+          {
+            "type": "main",
+            "url": "images/eg3-ab-pk/main/main.jpg",
+            "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abpk.html",
+            "save_path": "images/eg3-ab-pk/gallery/"
+          },
+          {
+            "type": "image_2",
+            "url": "images/eg3-ab-pk/gallery/image-2.jpg",
+            "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abpk.html",
+            "save_path": "images/eg3-ab-pk/gallery/"
+          }
+        ]
+      },
+      "documents": {
+        "catalog_pdf": "未確認",
+        "manual": "未確認",
+        "installation_manual": "未確認",
+        "cad": "未確認",
+        "dimension_drawing": "未確認",
+        "manufacturer_material": "https://www.onlyoneclub.jp/items/detail/eg3-ab-pk/",
+        "save_paths": {
+          "catalog": "catalog/eg3-ab-pk/",
+          "manual": "manual/eg3-ab-pk/",
+          "cad": "cad/eg3-ab-pk/"
+        }
+      },
+      "sources": [
+        {
+          "name": "オンリーワンクラブ公式商品ページ",
+          "url": "https://www.onlyoneclub.jp/items/detail/eg3-ab-pk/"
+        }
+      ]
+    },
+    {
+      "id": "eg3-ab-bq",
+      "basic": {
+        "product_name": "アンティークブリックス バーベキュー炉 オーブン機能付き",
+        "model_number": "EG3-AB-BQ",
+        "series": "アンティークブリックス",
+        "manufacturer": "オンリーワンクラブ",
+        "category": "BBQ炉",
+        "status": "販売中"
+      },
+      "pricing": {
+        "manufacturer_price_ex_tax": 379000,
+        "manufacturer_price_in_tax": 416900,
+        "purchase_rate": "未確認",
+        "purchase_price": "未確認",
+        "selling_price": "未確認",
+        "lowest_online_price": "未確認",
+        "gross_profit_amount": "未確認",
+        "gross_profit_rate": "未確認"
+      },
+      "size": {
+        "width_mm": 720,
+        "depth_mm": 615,
+        "height_mm": 840,
+        "weight_kg": "未確認"
+      },
+      "materials": {
+        "body": "耐火煉瓦",
+        "door": "鉄",
+        "hardware": "未確認",
+        "refractory_material": "耐火煉瓦",
+        "coating": "耐熱塗装"
+      },
+      "accessories": {
+        "standard": [
+          "耐熱接着剤",
+          "寸切ボルト"
+        ],
+        "options": [
+          "未確認"
+        ]
+      },
+      "cooking_support": {
+        "pizza": "△",
+        "bread": "△",
+        "bbq": "○",
+        "roast": "○",
+        "gratin": "○",
+        "smoking": "△",
+        "dutch_oven": "△"
+      },
+      "installation": {
+        "required_space": "本体寸法以上。調理・作業・排煙スペースを確保。詳細未確認。",
+        "foundation": "重量物・火気使用に適した安定した屋外設置面が必要。詳細未確認。",
+        "installation_method": "屋外据置。本体は4分割納品。付属の耐熱接着剤と寸切ボルトで固定。",
+        "split_delivery": "本体4分割納品",
+        "assembly_method": "付属の耐熱接着剤と寸切ボルトで固定",
+        "recommended_location": "庭、テラス、アウトドアキッチンなど、調理スペースを確保できる屋外"
+      },
+      "warnings": {
+        "smoke": "発煙・排煙に配慮。近隣や建物開口部への影響を確認。",
+        "ash": "灰の処理が必要。完全消火後に清掃。",
+        "fire": "火気使用商品のため、周囲の安全確認が必要。",
+        "weight": "重量未確認。搬入経路と設置面の強度確認が必要。",
+        "combustibles": "可燃物から十分に離して設置。",
+        "maintenance": "使用後の灰・煤の清掃が必要。詳細未確認。",
+        "warranty": "未確認",
+        "other": "目地部にヘアークラックが入る場合があるが、品質上問題ない旨の注意あり。"
+      },
+      "seo": {
+        "title": "アンティークブリックス BBQ炉 EG3-AB-BQ｜オーブン機能付き",
+        "meta_description": "オンリーワンクラブのアンティークブリックス バーベキュー炉 EG3-AB-BQ。耐火煉瓦の屋外用BBQ炉、オーブン機能付きです。",
+        "catch_copy": "BBQもオーブン調理も楽しめる本格炉。",
+        "description_30": "オーブン機能付き屋外BBQ炉。",
+        "description_100": "アンティークブリックス BBQ炉は、耐火煉瓦の存在感がある屋外用調理炉。BBQとオーブン調理を楽しめます。",
+        "description_300": "オンリーワンクラブのアンティークブリックス バーベキュー炉 オーブン機能付き EG3-AB-BQは、耐火煉瓦を使用した屋外用の本格調理炉です。BBQを中心に、ローストやグラタンなどオーブン調理にも使いやすい構成です。本体は4分割納品で、付属の耐熱接着剤と寸切ボルトで固定します。屋外キッチンや広めの庭におすすめです。"
+      },
+      "sns": {
+        "instagram": "BBQだけで終わらない、庭の本格調理炉。アンティークブリックス バーベキュー炉は、耐火煉瓦の存在感とオーブン機能が魅力です。アウトドアキッチンをしっかり作りたい方に。#BBQ炉 #アウトドアリビング #外構",
+        "tiktok": "庭に本格BBQ炉。オーブン機能付きのアンティークブリックスなら、焼くだけじゃないアウトドア調理が楽しめます。",
+        "google_business": "アンティークブリックス バーベキュー炉 EG3-AB-BQを商品マスタへ追加しました。BBQとオーブン調理を楽しめる屋外用調理炉です。",
+        "facebook": "アンティークブリックス バーベキュー炉 オーブン機能付き EG3-AB-BQは、BBQだけでなくローストやグラタンなどの調理にも使いやすい屋外用調理炉です。"
+      },
+      "comparison_rating": {
+        "visual_appeal": 5,
+        "pizza_performance": 3,
+        "bbq_performance": 5,
+        "smoking_performance": 3,
+        "ease_of_use": 3,
+        "beginner_friendly": 3,
+        "maintenance": 3,
+        "recommendation": 4
+      },
+      "photos": {
+        "main": {
+          "url": "images/eg3-ab-bq/main/main.jpg",
+          "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abbq.html",
+          "save_path": "images/eg3-ab-bq/main/"
+        },
+        "front": "未確認",
+        "left": "未確認",
+        "right": "未確認",
+        "back": "未確認",
+        "door_open": "未確認",
+        "inside": "未確認",
+        "usage_image": "未確認",
+        "pizza_cooking": "未確認",
+        "bbq_cooking": "未確認",
+        "smoking_cooking": "未確認",
+        "dimension_drawing": "未確認",
+        "catalog_image": "未確認",
+        "installation_example": "未確認",
+        "gallery": [
+          {
+            "type": "main",
+            "url": "images/eg3-ab-bq/main/main.jpg",
+            "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abbq.html",
+            "save_path": "images/eg3-ab-bq/gallery/"
+          },
+          {
+            "type": "image_2",
+            "url": "images/eg3-ab-bq/gallery/image-2.jpg",
+            "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abbq.html",
+            "save_path": "images/eg3-ab-bq/gallery/"
+          }
+        ]
+      },
+      "documents": {
+        "catalog_pdf": "未確認",
+        "manual": "未確認",
+        "installation_manual": "未確認",
+        "cad": "未確認",
+        "dimension_drawing": "未確認",
+        "manufacturer_material": "https://www.onlyoneclub.jp/items/detail/eg3-ab-bq/",
+        "save_paths": {
+          "catalog": "catalog/eg3-ab-bq/",
+          "manual": "manual/eg3-ab-bq/",
+          "cad": "cad/eg3-ab-bq/"
+        }
+      },
+      "sources": [
+        {
+          "name": "オンリーワンクラブ公式商品ページ",
+          "url": "https://www.onlyoneclub.jp/items/detail/eg3-ab-bq/"
+        }
+      ]
+    },
+    {
+      "id": "eg3-ab-kk",
+      "basic": {
+        "product_name": "アンティークブリックス 燻製窯",
+        "model_number": "EG3-AB-KK",
+        "series": "アンティークブリックス",
+        "manufacturer": "オンリーワンクラブ",
+        "category": "燻製窯",
+        "status": "販売中"
+      },
+      "pricing": {
+        "manufacturer_price_ex_tax": 310000,
+        "manufacturer_price_in_tax": 341000,
+        "purchase_rate": "未確認",
+        "purchase_price": "未確認",
+        "selling_price": "未確認",
+        "lowest_online_price": "未確認",
+        "gross_profit_amount": "未確認",
+        "gross_profit_rate": "未確認"
+      },
+      "size": {
+        "width_mm": 515,
+        "depth_mm": 465,
+        "height_mm": 660,
+        "weight_kg": "未確認"
+      },
+      "materials": {
+        "body": "耐火煉瓦",
+        "door": "鉄",
+        "hardware": "未確認",
+        "refractory_material": "耐火煉瓦",
+        "coating": "耐熱塗装"
+      },
+      "accessories": {
+        "standard": [
+          "耐熱接着剤"
+        ],
+        "options": [
+          "未確認"
+        ]
+      },
+      "cooking_support": {
+        "pizza": "×",
+        "bread": "△",
+        "bbq": "△",
+        "roast": "△",
+        "gratin": "△",
+        "smoking": "○",
+        "dutch_oven": "△"
+      },
+      "installation": {
+        "required_space": "本体寸法以上。煙・臭い・作業スペースを確保。詳細未確認。",
+        "foundation": "重量物・火気使用に適した安定した屋外設置面が必要。詳細未確認。",
+        "installation_method": "屋外据置。ドーム部と胴体を分割納品し、付属の耐熱接着剤で固定。",
+        "split_delivery": "ドーム部と胴体の分割納品",
+        "assembly_method": "付属の耐熱接着剤で固定",
+        "recommended_location": "庭、テラス、アウトドアキッチンなど、煙や臭いに配慮できる屋外"
+      },
+      "warnings": {
+        "smoke": "燻製用途のため発煙・臭いに配慮。近隣や建物開口部への影響を確認。",
+        "ash": "灰の処理が必要。完全消火後に清掃。",
+        "fire": "火気使用商品のため、周囲の安全確認が必要。",
+        "weight": "重量未確認。搬入経路と設置面の強度確認が必要。",
+        "combustibles": "可燃物から十分に離して設置。",
+        "maintenance": "使用後の灰・煤の清掃が必要。詳細未確認。",
+        "warranty": "未確認",
+        "other": "目地部にヘアークラックが入る場合があるが、品質上問題ない旨の注意あり。"
+      },
+      "seo": {
+        "title": "アンティークブリックス 燻製窯 EG3-AB-KK｜屋外用燻製窯",
+        "meta_description": "オンリーワンクラブのアンティークブリックス 燻製窯 EG3-AB-KK。耐火煉瓦の屋外用燻製窯です。",
+        "catch_copy": "庭で楽しむ、本格アンティーク調燻製窯。",
+        "description_30": "耐火煉瓦の屋外用燻製窯。",
+        "description_100": "アンティークブリックス 燻製窯は、耐火煉瓦の質感を活かした屋外用燻製窯。庭時間を本格的に楽しめます。",
+        "description_300": "オンリーワンクラブのアンティークブリックス 燻製窯 EG3-AB-KKは、耐火煉瓦を使用した屋外用の燻製窯です。アンティーク調の外観で庭やテラスにも馴染みやすく、自宅で燻製を楽しみたい方に向いています。ドーム部と胴体は分割納品され、付属の耐熱接着剤で固定します。煙や臭い、火気、重量に配慮した設置計画が必要です。"
+      },
+      "sns": {
+        "instagram": "庭で燻製を楽しむなら、雰囲気も大事。アンティークブリックス 燻製窯は、耐火煉瓦の質感が庭に馴染む屋外用燻製窯です。休日の庭時間をもっと楽しく。#燻製窯 #アウトドアキッチン #庭時間",
+        "tiktok": "庭で燻製ができる暮らし。アンティークブリックス 燻製窯なら、見た目も本格感も楽しめます。",
+        "google_business": "アンティークブリックス 燻製窯 EG3-AB-KKを商品マスタへ追加しました。庭やテラスで燻製を楽しみたい方向けの屋外用燻製窯です。",
+        "facebook": "アンティークブリックス 燻製窯 EG3-AB-KKは、耐火煉瓦の質感を活かした屋外用燻製窯です。自宅で燻製を楽しむ庭づくりに向いています。"
+      },
+      "comparison_rating": {
+        "visual_appeal": 5,
+        "pizza_performance": 1,
+        "bbq_performance": 2,
+        "smoking_performance": 5,
+        "ease_of_use": 3,
+        "beginner_friendly": 3,
+        "maintenance": 3,
+        "recommendation": 4
+      },
+      "photos": {
+        "main": {
+          "url": "images/eg3-ab-kk/main/main.jpg",
+          "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abkk.html",
+          "save_path": "images/eg3-ab-kk/main/"
+        },
+        "front": "未確認",
+        "left": "未確認",
+        "right": "未確認",
+        "back": "未確認",
+        "door_open": "未確認",
+        "inside": "未確認",
+        "usage_image": "未確認",
+        "pizza_cooking": "未確認",
+        "bbq_cooking": "未確認",
+        "smoking_cooking": "未確認",
+        "dimension_drawing": "未確認",
+        "catalog_image": "未確認",
+        "installation_example": "未確認",
+        "gallery": [
+          {
+            "type": "main",
+            "url": "images/eg3-ab-kk/main/main.jpg",
+            "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abkk.html",
+            "save_path": "images/eg3-ab-kk/gallery/"
+          },
+          {
+            "type": "image_2",
+            "url": "images/eg3-ab-kk/gallery/image-2.jpg",
+            "source_page": "https://store.shopping.yahoo.co.jp/interiortool/ooc-eg3abkk.html",
+            "save_path": "images/eg3-ab-kk/gallery/"
+          }
+        ]
+      },
+      "documents": {
+        "catalog_pdf": "未確認",
+        "manual": "未確認",
+        "installation_manual": "未確認",
+        "cad": "未確認",
+        "dimension_drawing": "未確認",
+        "manufacturer_material": "https://www.onlyoneclub.jp/items/detail/eg3-ab-kk/",
+        "save_paths": {
+          "catalog": "catalog/eg3-ab-kk/",
+          "manual": "manual/eg3-ab-kk/",
+          "cad": "cad/eg3-ab-kk/"
+        }
+      },
+      "sources": [
+        {
+          "name": "オンリーワンクラブ公式商品ページ",
+          "url": "https://www.onlyoneclub.jp/items/detail/eg3-ab-kk/"
+        }
+      ]
+    }
+  ]
+}

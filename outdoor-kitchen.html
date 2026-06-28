@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="庭で過ごす休日を提案するアウトドアキッチンサイト。本格薪窯・BBQ炉・燻製窯を、暮らしのイメージから選べます。" />
+  <title>庭で過ごす休日｜アウトドアキッチン・ピザ窯・BBQ炉</title>
+  <link rel="stylesheet" href="css/outdoor-kitchen.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ページ上部へ">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>
+        <strong>OUTDOOR KITCHEN</strong>
+        <small>Pizza Oven / BBQ / Smoker</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="ページ内メニュー">
+      <a href="#products">庭時間</a>
+      <a href="#compare">比較</a>
+      <a href="#contact">相談</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Outdoor Kitchen Life</p>
+        <h1>庭が、いちばん贅沢なレストランになる。</h1>
+        <p class="lead">火を起こし、料理を待ち、家族や友人と囲む。商品ではなく、庭で過ごす豊かな時間をご提案します。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#products">庭時間を見る</a>
+          <a class="btn btn-secondary" href="#contact">相談する</a>
+        </div>
+      </div>
+      <div class="hero-visual is-loading" id="hero-visual" aria-label="庭で楽しむアウトドアキッチンのイメージ">
+        <div class="hero-carousel" id="hero-carousel"></div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-head">
+        <p class="eyebrow">Garden Life</p>
+        <h2>どんな休日を庭で過ごすか。</h2>
+        <p>単体の商品写真ではなく、庭で過ごす時間をイメージしながら選べるように整理しました。</p>
+      </div>
+      <div class="status-message" id="load-status">商品マスタを読み込み中です。</div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+    </section>
+
+    <section class="section section-warm" id="compare">
+      <div class="section-head">
+        <p class="eyebrow">Compare</p>
+        <h2>仕様比較</h2>
+        <p>候補が決まったら、サイズや用途を確認できます。未確認情報は推測せず表示します。</p>
+      </div>
+      <div class="table-scroll">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>商品</th>
+              <th>カテゴリー</th>
+              <th>サイズ</th>
+              <th>税込定価</th>
+              <th>ピザ</th>
+              <th>BBQ</th>
+              <th>燻製</th>
+              <th>映え</th>
+              <th>おすすめ</th>
+            </tr>
+          </thead>
+          <tbody id="comparison-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section life-section" id="life">
+      <div class="section-head">
+        <p class="eyebrow">Lifestyle</p>
+        <h2>庭で過ごす時間をつくる。</h2>
+      </div>
+      <div class="story-grid">
+        <article>
+          <h3>料理を待つ時間まで楽しむ</h3>
+          <p>焼く、待つ、囲む。その時間ごと楽しめるのが、屋外調理器の魅力です。家族や友人と過ごす庭に、火を囲む楽しさが生まれます。</p>
+        </article>
+        <article>
+          <h3>庭が、集まる場所になる</h3>
+          <p>ピザ、ロースト、BBQ、燻製。目的に合わせて商品を選ぶことで、庭は眺める場所から使う場所へ変わります。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="installation">
+      <div class="section-head">
+        <p class="eyebrow">Installation</p>
+        <h2>設置について</h2>
+      </div>
+      <div class="info-cards">
+        <article class="info-card">
+          <h3>設置面</h3>
+          <p>重量物・火気使用に適した安定した屋外設置面が必要です。重量や基礎条件は未確認項目として商品ごとに管理します。</p>
+        </article>
+        <article class="info-card">
+          <h3>搬入と組立</h3>
+          <p>分割納品や組立方法は商品ごとに異なります。商品マスタの設置情報を確認し、搬入経路も事前に確認します。</p>
+        </article>
+        <article class="info-card">
+          <h3>設置場所</h3>
+          <p>庭、テラス、アウトドアキッチンなど、煙・火気・近隣への配慮ができる場所を推奨します。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section caution-section" id="caution">
+      <div class="section-head">
+        <p class="eyebrow">Safety</p>
+        <h2>使用前の注意事項</h2>
+      </div>
+      <ul class="caution-list">
+        <li><strong>煙</strong><span>排煙方向、建物の窓、近隣への影響を確認してください。</span></li>
+        <li><strong>灰</strong><span>灰は完全消火後に処理し、使用後は清掃してください。</span></li>
+        <li><strong>火気</strong><span>火気使用商品のため、使用中はその場を離れないでください。</span></li>
+        <li><strong>可燃物</strong><span>木材、植栽、外壁、屋根材などから十分に離して使用してください。</span></li>
+        <li><strong>近隣配慮</strong><span>煙・臭い・音・時間帯に配慮し、住宅地では特に注意してください。</span></li>
+        <li><strong>強風時の使用禁止</strong><span>火の粉や煙が流れやすいため、強風時は使用しないでください。</span></li>
+      </ul>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>よくある質問</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>価格が未確認の商品はどう表示されますか？</summary>
+          <p>商品マスタで価格が未確認の場合は「価格はお問い合わせください」と表示します。推測価格は表示しません。</p>
+        </details>
+        <details>
+          <summary>販売価格や仕入率はどこで管理しますか？</summary>
+          <p>`products/products.json` の価格項目に後から追記できる構成です。公開ページでは不要な内部項目は表示しません。</p>
+        </details>
+        <details>
+          <summary>商品を追加したい場合は？</summary>
+          <p>JSONの `products` に1件追加すると、商品一覧と比較表へ反映されます。</p>
+        </details>
+        <details>
+          <summary>画像がない商品はどうなりますか？</summary>
+          <p>画像URLや保存先が未確認の場合は、レンガと火をイメージしたプレースホルダーを表示します。</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-head">
+        <p class="eyebrow">Contact</p>
+        <h2>お問い合わせ</h2>
+        <p>設置場所の写真、寸法、気になる商品コードを送っていただけると相談がスムーズです。</p>
+      </div>
+      <div class="contact-actions">
+        <a class="btn btn-line" href="https://line.me/R/ti/p/@953wnidc" target="_blank" rel="noopener noreferrer">LINE相談</a>
+        <a class="btn btn-phone" href="tel:09028235513">電話相談</a>
+        <a class="btn btn-mail" href="mailto:xinjiaantian83@gmail.com?subject=%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%E8%AA%BF%E7%90%86%E5%99%A8%E3%81%AE%E7%9B%B8%E8%AB%87">メール相談</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Outdoor kitchen product master demo / Static HTML, CSS, JS</p>
+  </footer>
+
+  <script src="js/outdoor-kitchen.js"></script>
+</body>
+</html>
