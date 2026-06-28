@@ -140,12 +140,13 @@ img {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.38) 44%, rgba(0, 0, 0, 0.18) 100%),
-    linear-gradient(180deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.42));
+    linear-gradient(90deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.14) 46%, rgba(0, 0, 0, 0.05) 100%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.2));
 }
 
 .hero-carousel,
-.hero-slide {
+.hero-slide,
+.hero-slide picture {
   position: absolute;
   inset: 0;
 }
@@ -162,12 +163,16 @@ img {
   transform: scale(1);
 }
 
+.hero-slide picture,
 .hero-slide img {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.hero-slide img {
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
 }
 
 .hero-slide figcaption {
@@ -738,7 +743,11 @@ h1 {
 
   .hero-visual::after {
     background:
-      linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.34) 36%, rgba(0, 0, 0, 0.82) 100%);
+      linear-gradient(180deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.12) 34%, rgba(0, 0, 0, 0.25) 100%);
+  }
+
+  .hero-slide img {
+    object-position: center center;
   }
 
   .hero-actions .btn,

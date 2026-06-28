@@ -9,8 +9,9 @@
   var DETAIL_PAGE = 'outdoor-kitchen-detail.html';
   var LIFESTYLE_IMAGES = {
     hero: {
-      url: 'images/lifestyle/g19-hero-outdoor-kitchen-style.jpg',
-      label: '庭で過ごす休日のアウトドアキッチン',
+      url: 'images/lifestyle/hero-evening-garden-pizza.jpg',
+      mobileUrl: 'images/lifestyle/hero-evening-garden-pizza-mobile.jpg',
+      label: '夕暮れの庭で家族とピザ窯を囲むアウトドアキッチン',
     },
     productCards: {
       'eg3-ab-pk': {
@@ -176,7 +177,12 @@
     heroVisual.classList.add('has-images');
     var figure = document.createElement('figure');
     figure.className = 'hero-slide is-active';
-    figure.innerHTML = '<img src="' + LIFESTYLE_IMAGES.hero.url + '" alt="' + LIFESTYLE_IMAGES.hero.label + '"><figcaption>' + LIFESTYLE_IMAGES.hero.label + '</figcaption>';
+    figure.innerHTML =
+      '<picture>' +
+        '<source media="(max-width: 720px)" srcset="' + LIFESTYLE_IMAGES.hero.mobileUrl + '">' +
+        '<img src="' + LIFESTYLE_IMAGES.hero.url + '" alt="' + LIFESTYLE_IMAGES.hero.label + '">' +
+      '</picture>' +
+      '<figcaption>' + LIFESTYLE_IMAGES.hero.label + '</figcaption>';
     heroCarousel.appendChild(figure);
   }
 
