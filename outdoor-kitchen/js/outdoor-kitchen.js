@@ -78,24 +78,19 @@
     var basic = product.basic || {};
     var pricing = product.pricing || {};
     var seo = product.seo || {};
-    var rating = product.comparison_rating || {};
     var article = document.createElement('article');
     article.className = 'product-card';
     article.innerHTML =
       renderProductMedia(product, basic) +
       '<div class="product-body">' +
-        '<div class="product-meta">' +
-          '<span class="chip">' + text(basic.category) + '</span>' +
-          '<span class="chip">' + text(basic.model_number) + '</span>' +
-        '</div>' +
+        '<p class="product-model">' + text(basic.model_number) + '</p>' +
         '<h3>' + text(basic.product_name) + '</h3>' +
         '<p class="product-desc">' + text(seo.description_30) + '</p>' +
         '<dl class="spec-list">' +
           '<div class="spec-row"><dt>サイズ</dt><dd>' + formatSize(product.size) + '</dd></div>' +
           '<div class="spec-row"><dt>税込定価</dt><dd>' + formatYen(pricing.manufacturer_price_in_tax) + '</dd></div>' +
-          '<div class="spec-row"><dt>映え評価</dt><dd><span class="rating">' + ratingStars(rating.visual_appeal) + '</span></dd></div>' +
-          '<div class="spec-row"><dt>おすすめ度</dt><dd><span class="rating">' + ratingStars(rating.recommendation) + '</span></dd></div>' +
         '</dl>' +
+        '<a class="product-cta" href="#contact">お問い合わせ</a>' +
       '</div>';
     return article;
   }
