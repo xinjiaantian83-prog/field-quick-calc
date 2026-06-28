@@ -201,6 +201,7 @@
       console.info('[Outdoor Kitchen] loaded products:', products.length);
     })
     .catch(function (error) {
+      renderHero();
       loadStatus.textContent = '商品マスタを読み込めませんでした。ローカル確認時は簡易サーバーで開いてください。';
       console.error('[Outdoor Kitchen] product load failed', error);
     });
