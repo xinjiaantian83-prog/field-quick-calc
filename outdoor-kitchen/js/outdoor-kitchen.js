@@ -6,6 +6,31 @@
   var loadStatus = document.getElementById('load-status');
   var heroVisual = document.getElementById('hero-visual');
   var heroCarousel = document.getElementById('hero-carousel');
+  var DETAIL_PAGE = 'outdoor-kitchen-detail.html';
+  var LIFESTYLE_IMAGES = {
+    hero: {
+      url: 'images/lifestyle/g19-hero-outdoor-kitchen-style.jpg',
+      label: '庭で過ごす休日のアウトドアキッチン',
+    },
+    productCards: {
+      'eg3-ab-pk': {
+        url: 'images/lifestyle/g19-antique-bricks-lifestyle.jpg',
+        label: '庭に馴染むアンティークブリックスの施工イメージ',
+      },
+      'eg3-ab-bq': {
+        url: 'images/lifestyle/g19-pizza-fire-table.jpg',
+        label: '火と食事を囲むアウトドア調理のイメージ',
+      },
+      'eg3-ab-kk': {
+        url: 'images/lifestyle/g19-fire-pan-deck.jpg',
+        label: '庭で火を楽しむ休日のイメージ',
+      },
+    },
+    fallback: {
+      url: 'images/lifestyle/g19-ooya-stone-garden.jpg',
+      label: '庭時間を楽しむアウトドアキッチン',
+    },
+  };
   var DATA_SOURCES = [
     'products/products.json',
     'json/products.json',
@@ -55,12 +80,21 @@
     });
   }
 
+  function getLifestyleImage(product) {
+    var id = product.id || '';
+    return LIFESTYLE_IMAGES.productCards[id] || LIFESTYLE_IMAGES.fallback;
+  }
+
+  function getDetailUrl(product) {
+    return DETAIL_PAGE + '?id=' + encodeURIComponent(product.id || '');
+  }
+
   function renderProductMedia(product, basic) {
-    var images = getProductImages(product);
-    if (!images.length) {
+    var image = getLifestyleImage(product);
+    if (!image || !image.url) {
       return '<div class="product-placeholder"><span>' + text(basic.category) + '<br>画像未確認</span></div>';
     }
-    return '<div class="product-media"><img src="' + images[0] + '" alt="' + text(basic.product_name) + '" loading="lazy"></div>';
+    return '<div class="product-media"><img src="' + image.url + '" alt="' + image.label + '" loading="lazy"></div>';
   }
 
   function loadProducts() {
@@ -80,18 +114,32 @@
     var seo = product.seo || {};
     var article = document.createElement('article');
     article.className = 'product-card';
+    article.setAttribute('tabindex', '0');
+    article.setAttribute('role', 'link');
+    article.setAttribute('aria-label', text(basic.product_name) + 'の詳細を見る');
+    article.dataset.href = getDetailUrl(product);
     article.innerHTML =
       renderProductMedia(product, basic) +
       '<div class="product-body">' +
         '<p class="product-model">' + text(basic.model_number) + '</p>' +
         '<h3>' + text(basic.product_name) + '</h3>' +
-        '<p class="product-desc">' + text(seo.description_30) + '</p>' +
+        '<p class="product-desc">' + text(seo.catch_copy || seo.description_30) + '</p>' +
         '<dl class="spec-list">' +
           '<div class="spec-row"><dt>サイズ</dt><dd>' + formatSize(product.size) + '</dd></div>' +
           '<div class="spec-row"><dt>税込定価</dt><dd>' + formatYen(pricing.manufacturer_price_in_tax) + '</dd></div>' +
         '</dl>' +
-        '<a class="product-cta" href="#contact">お問い合わせ</a>' +
+        '<a class="product-cta" href="' + getDetailUrl(product) + '">庭時間を見る</a>' +
       '</div>';
+    article.addEventListener('click', function (event) {
+      if (event.target.closest('a')) return;
+      window.location.href = article.dataset.href;
+    });
+    article.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        window.location.href = article.dataset.href;
+      }
+    });
     return article;
   }
 
@@ -114,21 +162,10 @@
     return tr;
   }
 
-  function renderHero(products) {
+  function renderHero() {
     if (!heroVisual || !heroCarousel) return;
-    var slides = [];
-    products.forEach(function (product) {
-      var basic = product.basic || {};
-      getProductImages(product).forEach(function (url) {
-        slides.push({
-          url: url,
-          name: text(basic.product_name),
-        });
-      });
-    });
-
     heroCarousel.textContent = '';
-    if (!slides.length) {
+    if (!LIFESTYLE_IMAGES.hero || !LIFESTYLE_IMAGES.hero.url) {
       heroVisual.classList.remove('has-images');
       heroVisual.classList.add('is-loading');
       heroCarousel.innerHTML = '<div class="hero-placeholder">画像未確認</div>';
@@ -137,22 +174,10 @@
 
     heroVisual.classList.remove('is-loading');
     heroVisual.classList.add('has-images');
-    slides.forEach(function (slide, index) {
-      var figure = document.createElement('figure');
-      figure.className = 'hero-slide' + (index === 0 ? ' is-active' : '');
-      figure.innerHTML = '<img src="' + slide.url + '" alt="' + slide.name + '"><figcaption>' + slide.name + '</figcaption>';
-      heroCarousel.appendChild(figure);
-    });
-
-    if (slides.length <= 1) return;
-    var activeIndex = 0;
-    window.setInterval(function () {
-      var slideEls = Array.prototype.slice.call(heroCarousel.querySelectorAll('.hero-slide'));
-      if (!slideEls.length) return;
-      slideEls[activeIndex].classList.remove('is-active');
-      activeIndex = (activeIndex + 1) % slideEls.length;
-      slideEls[activeIndex].classList.add('is-active');
-    }, 4200);
+    var figure = document.createElement('figure');
+    figure.className = 'hero-slide is-active';
+    figure.innerHTML = '<img src="' + LIFESTYLE_IMAGES.hero.url + '" alt="' + LIFESTYLE_IMAGES.hero.label + '"><figcaption>' + LIFESTYLE_IMAGES.hero.label + '</figcaption>';
+    heroCarousel.appendChild(figure);
   }
 
   function renderProducts(products) {
@@ -162,7 +187,7 @@
       productGrid.appendChild(createProductCard(product));
       comparisonBody.appendChild(createComparisonRow(product));
     });
-    renderHero(products);
+    renderHero();
   }
 
   loadProducts()
@@ -176,6 +201,7 @@
       console.info('[Outdoor Kitchen] loaded products:', products.length);
     })
     .catch(function (error) {
+      renderHero();
       loadStatus.textContent = '商品マスタを読み込めませんでした。ローカル確認時は簡易サーバーで開いてください。';
       console.error('[Outdoor Kitchen] product load failed', error);
     });
