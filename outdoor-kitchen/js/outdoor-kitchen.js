@@ -35,7 +35,7 @@
       id: 'bbq-weekend',
       category: 'OUTDOOR COOKING',
       title: '今日は外で食べようか。',
-      copy: '焼くだけではなく、集まるきっかけまでつくる庭のBBQシーン。',
+      copy: '香ばしい音と、外で飲む一杯。庭に人が集まるBBQシーン。',
       quote: '「またみんなで集まろう。」',
       image: 'images/lifestyle/g19-pizza-fire-table.jpg',
       productIds: ['eg3-ab-bq'],
@@ -204,7 +204,7 @@
       catalogGrid.appendChild(createCatalogCard(product));
     });
 
-    loadStatus.textContent = 'Garden Livingのシーンを表示しました。';
+    loadStatus.textContent = 'シーンを読み込みました。';
     window.setTimeout(function () {
       loadStatus.classList.add('is-hidden');
     }, 1600);

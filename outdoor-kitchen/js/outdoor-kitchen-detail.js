@@ -10,21 +10,21 @@
       url: 'images/lifestyle/hero-evening-garden-pizza.jpg',
       label: '夕暮れの庭で家族とピザ窯を囲むGarden Living',
       sceneTitle: '夕暮れ、庭でピザを焼く。',
-      sceneCopy: '火を見ながら焼き上がりを待つ時間まで、家族の思い出になります。商品からではなく、こんな時間を過ごしたいという気持ちから庭を考えます。',
+      sceneCopy: '火を見ながら焼き上がりを待つ時間まで、家族の思い出になります。',
       quote: '「じぃじ、またピザ作ろう！」',
     },
     'eg3-ab-bq': {
       url: 'images/lifestyle/g19-pizza-fire-table.jpg',
       label: '火と食事を囲むアウトドア調理のイメージ',
       sceneTitle: '今日は外で食べようか。',
-      sceneCopy: '焼くだけではなく、集まるきっかけまでつくる庭のBBQシーン。火と料理があると、庭は自然と人が集まる場所になります。',
+      sceneCopy: '香ばしい音と、外で飲む一杯。火と料理があると、庭は自然と人が集まる場所になります。',
       quote: '「またみんなで集まろう。」',
     },
     'eg3-ab-kk': {
       url: 'images/lifestyle/g19-fire-pan-deck.jpg',
       label: '庭で火を楽しむ休日のイメージ',
       sceneTitle: '待つ時間を楽しむ、燻製の庭。',
-      sceneCopy: 'すぐに食べるだけではない、香りと会話がゆっくり育つ休日。庭で過ごす時間に、少しだけ贅沢な余白をつくります。',
+      sceneCopy: '香りと会話がゆっくり育つ休日。庭で過ごす時間に、少しだけ贅沢な余白をつくります。',
       quote: '「次は何を燻そうか。」',
     },
   };
@@ -123,7 +123,7 @@
       '<article class="catalog-card">' +
         '<p class="product-model">' + text(basic.manufacturer) + '</p>' +
         '<h3>' + text(basic.product_name) + '</h3>' +
-        '<p>この空間で使用している商品です。仕様や設置条件は下部で確認できます。</p>' +
+        '<p>この写真のような空間づくりに使う商品です。仕様や設置条件は下部で確認できます。</p>' +
         '<div class="catalog-meta">' +
           '<span>' + text(basic.model_number) + '</span>' +
           '<strong>' + formatSceneYen(pricing.manufacturer_price_in_tax) + '</strong>' +
