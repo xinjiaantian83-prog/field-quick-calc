@@ -3,42 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="アウトドアキッチン商品の詳細ページ。商品写真、仕様、設置情報、注意事項を商品マスタから表示します。" />
-  <title>アウトドアキッチン 商品詳細</title>
+  <meta name="description" content="Garden Living by EXた組の商品詳細ページ。まず庭で過ごすシーンを見てから、使用商品と仕様を確認できます。" />
+  <title>Garden Living 商品詳細</title>
   <link rel="stylesheet" href="css/outdoor-kitchen.css" />
 </head>
 <body class="detail-page">
   <header class="site-header">
-    <a class="brand" href="outdoor-kitchen.html" aria-label="アウトドアキッチン一覧へ">
+    <a class="brand" href="index.html" aria-label="Garden Livingトップへ">
       <span class="brand-mark" aria-hidden="true"></span>
       <span>
-        <strong>OUTDOOR KITCHEN</strong>
-        <small>Garden Life Detail</small>
+        <strong>Garden Living</strong>
+        <small>by EXた組</small>
       </span>
     </a>
     <nav class="nav" aria-label="ページメニュー">
-      <a href="outdoor-kitchen.html#products">庭時間</a>
-      <a href="outdoor-kitchen.html#compare">比較</a>
-      <a href="outdoor-kitchen.html#contact">相談</a>
+      <a href="index.html#scenes">シーン</a>
+      <a href="index.html#catalog">掲載商品</a>
+      <a href="index.html#contact">相談</a>
     </nav>
   </header>
 
   <main>
     <section class="detail-hero" id="detail-hero">
       <div class="detail-hero-copy">
-        <p class="eyebrow" id="detail-category">Outdoor Kitchen</p>
-        <h1 id="detail-title">商品情報を読み込み中です。</h1>
-        <p class="lead" id="detail-lead">庭で過ごす時間をイメージしながら、仕様を確認できます。</p>
+        <p class="eyebrow" id="detail-category">Garden Living</p>
+        <h1 id="detail-title">庭時間を読み込み中です。</h1>
+        <p class="lead" id="detail-lead">まずは、その空間でどんな時間を過ごすかをイメージしてください。</p>
       </div>
       <div class="detail-hero-image" id="detail-hero-image"></div>
+    </section>
+
+    <section class="section detail-story-section">
+      <div class="section-head">
+        <p class="eyebrow">Scene</p>
+        <h2 id="detail-scene-title">この空間で過ごす時間</h2>
+        <p id="detail-scene-copy">庭で過ごす時間の説明を読み込み中です。</p>
+      </div>
+      <div class="quote-grid">
+        <p id="detail-scene-quote">「今日は外で食べようか。」</p>
+      </div>
+    </section>
+
+    <section class="section section-warm detail-used-section">
+      <div class="section-head">
+        <p class="eyebrow">Used Products</p>
+        <h2>この空間で使用している商品</h2>
+        <p>商品は空間をつくるための要素です。詳細な仕様は下部で確認できます。</p>
+      </div>
+      <div class="catalog-grid" id="detail-used-products"></div>
     </section>
 
     <section class="section detail-section">
       <div class="detail-layout">
         <div>
           <div class="section-head">
-            <p class="eyebrow">Product Photos</p>
-            <h2>商品写真</h2>
+            <p class="eyebrow">Product Detail</p>
+            <h2>商品写真・仕様</h2>
             <p>商品単体写真は、詳細確認用としてこちらにまとめています。</p>
           </div>
           <div class="detail-gallery" id="detail-gallery"></div>
@@ -53,8 +73,8 @@
 
     <section class="section section-warm">
       <div class="section-head">
-        <p class="eyebrow">Specifications</p>
-        <h2>仕様・設置情報</h2>
+        <p class="eyebrow">Installation</p>
+        <h2>設置情報</h2>
       </div>
       <div class="info-cards" id="detail-info"></div>
     </section>
@@ -70,19 +90,19 @@
     <section class="section contact-section" id="contact-detail">
       <div class="section-head">
         <p class="eyebrow">Contact</p>
-        <h2>庭時間を相談する</h2>
-        <p>設置予定場所の写真や寸法があると、商品選びと設置可否の相談がスムーズです。</p>
+        <h2>Garden Livingに相談する</h2>
+        <p>「この雰囲気に近づけたい」「庭で外ごはんをしたい」くらいの相談からで大丈夫です。</p>
       </div>
       <div class="contact-actions">
         <a class="btn btn-line" href="https://line.me/R/ti/p/@953wnidc" target="_blank" rel="noopener noreferrer">LINE相談</a>
         <a class="btn btn-phone" href="tel:09028235513">電話相談</a>
-        <a class="btn btn-mail" href="mailto:xinjiaantian83@gmail.com?subject=%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2%E8%AA%BF%E7%90%86%E5%99%A8%E3%81%AE%E7%9B%B8%E8%AB%87">メール相談</a>
+        <a class="btn btn-mail" href="mailto:xinjiaantian83@gmail.com?subject=Garden%20Living%E3%81%AE%E7%9B%B8%E8%AB%87">メール相談</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p><a href="outdoor-kitchen.html">アウトドアキッチン一覧へ戻る</a></p>
+    <p><a href="index.html">Garden Livingトップへ戻る</a></p>
   </footer>
 
   <script src="js/outdoor-kitchen-detail.js"></script>
