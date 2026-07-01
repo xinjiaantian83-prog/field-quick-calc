@@ -13,7 +13,7 @@
   ];
   var DEFAULT_HERO = {
     url: 'images/lifestyle/hero-evening-garden-pizza.jpg',
-    mobileUrl: 'images/lifestyle/hero-evening-garden-pizza-mobile.jpg',
+    mobileUrl: 'images/lifestyle/hero-evening-garden-pizza.jpg',
     label: '夕暮れの庭で家族とピザ窯を囲むGarden Living',
   };
   var DEFAULT_CATEGORIES = [
@@ -92,7 +92,7 @@
       copy: scene.copy || ((product.seo || {}).description_100 || ''),
       quote: scene.quote || '「今日は外で過ごそう。」',
       image: scene.image,
-      mobileImage: scene.mobile_image || scene.mobileImage || '',
+      mobileImage: '',
       productIds: scene.product_ids || scene.productIds || [product.id],
       detailProductId: product.id,
       status: 'available',

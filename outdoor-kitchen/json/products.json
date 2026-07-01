@@ -154,7 +154,36 @@
           "name": "オンリーワンクラブ公式商品ページ",
           "url": "https://www.onlyoneclub.jp/items/detail/eg3-ab-pk/"
         }
-      ]
+      ],
+      "garden_living": {
+        "publish": true,
+        "listing_order": 10,
+        "index_copy": "庭でピザを焼く時間をつくる、本格レンガ調ピザ窯。",
+        "scene": {
+          "id": "pizza-evening",
+          "category": "OUTDOOR COOKING",
+          "title": "夕暮れ、庭でピザを焼く。",
+          "copy": "火を見ながら焼き上がりを待つ時間まで、家族の思い出になります。",
+          "quote": "「じぃじ、またピザ作ろう！」",
+          "image": "images/lifestyle/hero-evening-garden-pizza.jpg",
+          "mobile_image": "images/lifestyle/hero-evening-garden-pizza.jpg",
+          "image_alt": "夕暮れの庭で家族とピザ窯を囲むGarden Living",
+          "product_ids": [
+            "eg3-ab-pk"
+          ],
+          "order": 10
+        },
+        "image_ideas": [
+          "夕暮れの庭で家族がピザ窯を囲む写真",
+          "帰省した孫と祖父がピザを取り出す写真",
+          "庭のテーブルに焼きたてピザを並べる写真"
+        ],
+        "scene_copies": [
+          "今日は外で食べようか。",
+          "じぃじ、またピザ作ろう！",
+          "焼き上がるまでの時間も、庭の思い出になる。"
+        ]
+      }
     },
     {
       "id": "eg3-ab-bq",
@@ -301,7 +330,35 @@
           "name": "オンリーワンクラブ公式商品ページ",
           "url": "https://www.onlyoneclub.jp/items/detail/eg3-ab-bq/"
         }
-      ]
+      ],
+      "garden_living": {
+        "publish": true,
+        "listing_order": 20,
+        "index_copy": "BBQとオーブン調理を庭で楽しむ、重厚感ある調理炉。",
+        "scene": {
+          "id": "bbq-weekend",
+          "category": "OUTDOOR COOKING",
+          "title": "今日は外で食べようか。",
+          "copy": "香ばしい音と、外で飲む一杯。火と料理があると、庭は自然と人が集まる場所になります。",
+          "quote": "「またみんなで集まろう。」",
+          "image": "images/lifestyle/g19-pizza-fire-table.jpg",
+          "image_alt": "火と食事を囲むアウトドア調理のイメージ",
+          "product_ids": [
+            "eg3-ab-bq"
+          ],
+          "order": 20
+        },
+        "image_ideas": [
+          "庭で友人がBBQ炉を囲む夕方の写真",
+          "肉と野菜を焼きながらテーブルで乾杯する写真",
+          "屋外キッチンとBBQ炉を組み合わせた施工イメージ"
+        ],
+        "scene_copies": [
+          "またみんなで集まろう。",
+          "庭に火があると、休日が少し長くなる。",
+          "外で焼く。それだけで特別になる。"
+        ]
+      }
     },
     {
       "id": "eg3-ab-kk",
@@ -447,7 +504,267 @@
           "name": "オンリーワンクラブ公式商品ページ",
           "url": "https://www.onlyoneclub.jp/items/detail/eg3-ab-kk/"
         }
-      ]
+      ],
+      "garden_living": {
+        "publish": true,
+        "listing_order": 30,
+        "index_copy": "待つ時間まで楽しめる、庭のための燻製窯。",
+        "scene": {
+          "id": "slow-smoke",
+          "category": "OUTDOOR COOKING",
+          "title": "待つ時間を楽しむ、燻製の庭。",
+          "copy": "香りと会話がゆっくり育つ休日。庭で過ごす時間に、少しだけ贅沢な余白をつくります。",
+          "quote": "「次は何を燻そうか。」",
+          "image": "images/lifestyle/g19-fire-pan-deck.jpg",
+          "image_alt": "庭で火を楽しむ休日のイメージ",
+          "product_ids": [
+            "eg3-ab-kk"
+          ],
+          "order": 30
+        },
+        "image_ideas": [
+          "木製テーブルに燻製料理を並べた庭の写真",
+          "夕暮れに煙が立つ静かな庭の写真",
+          "友人とゆっくり料理を待つアウトドアシーン"
+        ],
+        "scene_copies": [
+          "次は何を燻そうか。",
+          "待つ時間まで、おいしい。",
+          "香りが、庭に人を集める。"
+        ]
+      }
+    },
+    {
+      "id": "gm3-tam-c",
+      "basic": {
+        "product_name": "ガーデンシンク マニフィーク ウッドブラウン",
+        "model_number": "GM3-TAM-C",
+        "series": "ガーデンシンク マニフィーク",
+        "manufacturer": "オンリーワンクラブ",
+        "category": "ガーデンシンク",
+        "status": "販売中"
+      },
+      "pricing": {
+        "manufacturer_price_ex_tax": 370000,
+        "manufacturer_price_in_tax": 407000,
+        "purchase_rate": 0.65,
+        "purchase_price": 264550,
+        "selling_price": 311240,
+        "lowest_online_price": 311240,
+        "lowest_online_shop": "エコライフ 楽天市場店",
+        "lowest_online_url": "https://item.rakuten.co.jp/eco-life-r/gm3-tam-c/",
+        "lowest_online_checked_at": "2026-07-01",
+        "shipping_note": "送料無料表記 / 個人宅配送不可の商品あり。仕様差要確認",
+        "gross_profit_amount": 46690,
+        "gross_profit_rate": 0.15001285181853233,
+        "price_basis": "標準仕様 GM3-TAM-C。混合栓仕様の税抜378,000円とは分離。"
+      },
+      "size": {
+        "width_mm": "未確認",
+        "depth_mm": "未確認",
+        "height_mm": "未確認",
+        "weight_kg": "未確認"
+      },
+      "materials": {
+        "body": "未確認",
+        "door": "未確認",
+        "hardware": "未確認",
+        "refractory_material": "該当なし",
+        "coating": "未確認"
+      },
+      "accessories": {
+        "standard": [
+          "未確認"
+        ],
+        "options": [
+          "未確認"
+        ]
+      },
+      "cooking_support": {
+        "pizza": "×",
+        "bread": "×",
+        "bbq": "△",
+        "roast": "×",
+        "gratin": "×",
+        "smoking": "×",
+        "dutch_oven": "×"
+      },
+      "installation": {
+        "required_space": "本体寸法、給排水、作業スペースを確保。詳細寸法はメーカー資料確認。",
+        "foundation": "屋外水まわりとして安定した設置面が必要。給排水工事は現地状況により確認。",
+        "installation_method": "屋外設置。給水・排水・水平調整が必要。詳細未確認。",
+        "split_delivery": "未確認",
+        "assembly_method": "未確認",
+        "recommended_location": "庭、テラス、アウトドアキッチン、家庭菜園まわり、BBQスペース周辺"
+      },
+      "warnings": {
+        "smoke": "火気商品ではないが、BBQやピザ窯付近で使う場合は周辺の煙・油汚れに配慮。",
+        "ash": "灰を直接流さない。火気使用後の灰・炭は完全消火後に処理。",
+        "fire": "火気設備の近くへ設置する場合は離隔と安全確認が必要。",
+        "weight": "重量未確認。搬入経路と設置面を確認。",
+        "combustibles": "火気設備と組み合わせる場合は可燃物との距離を確保。",
+        "maintenance": "屋外水まわりとして定期清掃、排水部の詰まり確認が必要。",
+        "warranty": "未確認",
+        "other": "個人宅配送不可の商品情報あり。配送条件・仕様差は注文前に確認。"
+      },
+      "seo": {
+        "title": "ガーデンシンク マニフィーク GM3-TAM-C｜Garden Living",
+        "meta_description": "オンリーワンクラブのガーデンシンク マニフィーク GM3-TAM-C。庭やアウトドアキッチンの水まわりを上質に整えるガーデンシンクです。",
+        "catch_copy": "庭で過ごす時間を整える、上質なガーデンシンク。",
+        "description_30": "上質な屋外用ガーデンシンク。",
+        "description_100": "ガーデンシンク マニフィークは、庭やテラス、アウトドアキッチンの水まわりを整えるための上質なガーデンシンクです。",
+        "description_300": "オンリーワンクラブのガーデンシンク マニフィーク GM3-TAM-Cは、庭での食事、BBQ、家庭菜園、アウトドアキッチンまわりに使いやすい屋外用ガーデンシンクです。Garden Livingでは、商品単体ではなく、庭で過ごす時間を支える水まわりとして提案します。給排水や設置条件は現地状況により確認が必要です。"
+      },
+      "sns": {
+        "instagram": "庭で食べる、洗う、片付ける。その流れまで心地よく整えるガーデンシンク マニフィーク。アウトドアキッチンやBBQスペースに合わせたい一台です。#ガーデンシンク #アウトドアキッチン #庭時間",
+        "tiktok": "庭に水まわりがあると、外ごはんの快適さが変わります。ガーデンシンク マニフィークをGarden Livingへ追加。",
+        "google_business": "Garden Livingの商品DBへガーデンシンク マニフィーク GM3-TAM-Cを追加しました。庭の水まわり、BBQスペース、アウトドアキッチン提案に向いた商品です。",
+        "facebook": "ガーデンシンク マニフィーク GM3-TAM-CをGarden Livingへ追加しました。庭での食事やBBQ、家庭菜園まわりの水まわりを上質に整える商品です。"
+      },
+      "comparison_rating": {
+        "visual_appeal": 5,
+        "pizza_performance": 1,
+        "bbq_performance": 3,
+        "smoking_performance": 1,
+        "ease_of_use": 4,
+        "beginner_friendly": 3,
+        "maintenance": 3,
+        "recommendation": 5
+      },
+      "photos": {
+        "main": {
+          "url": "images/gm3-tam-c/main/main.jpg",
+          "source_page": "https://item.rakuten.co.jp/eco-life-r/gm3-tam-c/",
+          "save_path": "images/gm3-tam-c/main/"
+        },
+        "front": "未確認",
+        "left": "未確認",
+        "right": "未確認",
+        "back": "未確認",
+        "door_open": "未確認",
+        "inside": "未確認",
+        "usage_image": "未確認",
+        "pizza_cooking": "該当なし",
+        "bbq_cooking": "未確認",
+        "smoking_cooking": "該当なし",
+        "dimension_drawing": "未確認",
+        "catalog_image": "未確認",
+        "installation_example": "未確認",
+        "gallery": [
+          {
+            "type": "main",
+            "url": "images/gm3-tam-c/main/main.jpg",
+            "source_page": "https://item.rakuten.co.jp/eco-life-r/gm3-tam-c/",
+            "save_path": "images/gm3-tam-c/gallery/"
+          }
+        ]
+      },
+      "documents": {
+        "catalog_pdf": "未確認",
+        "manual": "未確認",
+        "installation_manual": "未確認",
+        "cad": "未確認",
+        "dimension_drawing": "未確認",
+        "manufacturer_material": "未確認",
+        "save_paths": {
+          "catalog": "catalog/gm3-tam-c/",
+          "manual": "manual/gm3-tam-c/",
+          "cad": "cad/gm3-tam-c/"
+        }
+      },
+      "sources": [
+        {
+          "name": "楽天市場 エコライフ 楽天市場店 商品ページ",
+          "url": "https://item.rakuten.co.jp/eco-life-r/gm3-tam-c/"
+        },
+        {
+          "name": "G19利益分析マスタ",
+          "url": "json/g19-profit-analysis.json"
+        },
+        {
+          "name": "価格修正メモ",
+          "url": "標準仕様 GM3-TAM-C メーカー定価 税抜370,000円"
+        }
+      ],
+      "garden_living": {
+        "publish": true,
+        "listing_order": 40,
+        "index_copy": "外ごはんや庭作業を心地よくする、上質な屋外水まわり。",
+        "scene": {
+          "id": "outdoor-kitchen-sink",
+          "category": "GARDEN ITEMS",
+          "title": "外で食べる準備まで、庭で完結する。",
+          "copy": "洗う、置く、片付ける。水まわりが整うと、庭で過ごす時間がもっと自然になります。",
+          "quote": "「今日は外で準備しようか。」",
+          "image": "images/lifestyle/g19-hero-outdoor-kitchen-style.jpg",
+          "mobile_image": "images/lifestyle/g19-hero-outdoor-kitchen-style.jpg",
+          "image_alt": "庭のアウトドアキッチンをイメージしたGarden Livingシーン",
+          "product_ids": [
+            "gm3-tam-c"
+          ],
+          "order": 40
+        },
+        "image_ideas": [
+          "夕暮れの庭でガーデンシンクの横に食材と皿を並べている写真",
+          "BBQ前に庭のシンクで野菜を洗う家族の写真",
+          "アウトドアキッチンとガーデンシンク、ピザ窯を同じ庭に配置した写真"
+        ],
+        "scene_copies": [
+          "今日は外で準備しようか。",
+          "片付けまで庭でできると、外ごはんはもっと楽になる。",
+          "庭に水まわりがあるだけで、休日の使い方が変わる。"
+        ]
+      }
     }
-  ]
+  ],
+  "garden_living": {
+    "brand_name": "Garden Living",
+    "sub_brand": "by EXた組",
+    "concept": "庭で過ごす豊かな時間を提案するブランド",
+    "hero": {
+      "url": "images/lifestyle/hero-evening-garden-pizza.jpg",
+      "mobile_url": "images/lifestyle/hero-evening-garden-pizza.jpg",
+      "label": "夕暮れの庭で家族とピザ窯を囲むGarden Living"
+    },
+    "categories": [
+      "OUTDOOR COOKING",
+      "DOG GARDEN",
+      "OUTDOOR SAUNA",
+      "GARDEN FURNITURE",
+      "GARDEN ITEMS",
+      "DIY SUPPORT"
+    ],
+    "planned_scenes": [
+      {
+        "id": "dog-garden",
+        "category": "DOG GARDEN",
+        "title": "犬が走れる庭をつくる。",
+        "copy": "人工芝、フェンス、門扉まで。家族も犬も安心して過ごせる庭へ。",
+        "quote": "「今日は庭で遊ぼう。」",
+        "image": "images/lifestyle/g19-ooya-stone-garden.jpg",
+        "product_ids": [],
+        "order": 90
+      },
+      {
+        "id": "outdoor-sauna",
+        "category": "OUTDOOR SAUNA",
+        "title": "外気浴まで庭で楽しむ。",
+        "copy": "夕暮れ、灯り、木の質感。サウナのあとに深呼吸したくなる庭。",
+        "quote": "「ここで整いたい。」",
+        "image": "images/lifestyle/g19-firewood-rack-detail.jpg",
+        "product_ids": [],
+        "order": 91
+      },
+      {
+        "id": "garden-furniture",
+        "category": "GARDEN FURNITURE",
+        "title": "座る場所があるだけで、庭は部屋になる。",
+        "copy": "テーブル、チェア、灯り。外で過ごす理由を少しずつ増やします。",
+        "quote": "「コーヒー、外で飲もうか。」",
+        "image": "images/lifestyle/g19-antique-bricks-lifestyle.jpg",
+        "product_ids": [],
+        "order": 92
+      }
+    ]
+  }
 }
