@@ -8,81 +8,21 @@
   var heroCarousel = document.getElementById('hero-carousel');
   var DETAIL_PAGE = 'outdoor-kitchen-detail.html';
   var DATA_SOURCES = [
-    'products/products.json',
     'json/products.json',
+    'products/products.json',
   ];
-
-  var HERO = {
+  var DEFAULT_HERO = {
     url: 'images/lifestyle/hero-evening-garden-pizza.jpg',
     mobileUrl: 'images/lifestyle/hero-evening-garden-pizza-mobile.jpg',
     label: '夕暮れの庭で家族とピザ窯を囲むGarden Living',
   };
-
-  var SCENES = [
-    {
-      id: 'pizza-evening',
-      category: 'OUTDOOR COOKING',
-      title: '夕暮れ、庭でピザを焼く。',
-      copy: '火を見ながら焼き上がりを待つ時間まで、家族の思い出になります。',
-      quote: '「じぃじ、またピザ作ろう！」',
-      image: 'images/lifestyle/hero-evening-garden-pizza.jpg',
-      mobileImage: 'images/lifestyle/hero-evening-garden-pizza-mobile.jpg',
-      productIds: ['eg3-ab-pk'],
-      detailProductId: 'eg3-ab-pk',
-      status: 'available',
-    },
-    {
-      id: 'bbq-weekend',
-      category: 'OUTDOOR COOKING',
-      title: '今日は外で食べようか。',
-      copy: '香ばしい音と、外で飲む一杯。庭に人が集まるBBQシーン。',
-      quote: '「またみんなで集まろう。」',
-      image: 'images/lifestyle/g19-pizza-fire-table.jpg',
-      productIds: ['eg3-ab-bq'],
-      detailProductId: 'eg3-ab-bq',
-      status: 'available',
-    },
-    {
-      id: 'slow-smoke',
-      category: 'OUTDOOR COOKING',
-      title: '待つ時間を楽しむ、燻製の庭。',
-      copy: 'すぐに食べるだけではない、香りと会話がゆっくり育つ休日。',
-      quote: '「次は何を燻そうか。」',
-      image: 'images/lifestyle/g19-fire-pan-deck.jpg',
-      productIds: ['eg3-ab-kk'],
-      detailProductId: 'eg3-ab-kk',
-      status: 'available',
-    },
-    {
-      id: 'dog-garden',
-      category: 'DOG GARDEN',
-      title: '犬が走れる庭をつくる。',
-      copy: '人工芝、フェンス、門扉まで。家族も犬も安心して過ごせる庭へ。',
-      quote: '「今日は庭で遊ぼう。」',
-      image: 'images/lifestyle/g19-ooya-stone-garden.jpg',
-      productIds: [],
-      status: 'coming',
-    },
-    {
-      id: 'outdoor-sauna',
-      category: 'OUTDOOR SAUNA',
-      title: '外気浴まで庭で楽しむ。',
-      copy: '夕暮れ、灯り、木の質感。サウナのあとに深呼吸したくなる庭。',
-      quote: '「ここで整いたい。」',
-      image: 'images/lifestyle/g19-firewood-rack-detail.jpg',
-      productIds: [],
-      status: 'coming',
-    },
-    {
-      id: 'garden-furniture',
-      category: 'GARDEN FURNITURE',
-      title: '座る場所があるだけで、庭は部屋になる。',
-      copy: 'テーブル、チェア、灯り。外で過ごす理由を少しずつ増やします。',
-      quote: '「コーヒー、外で飲もうか。」',
-      image: 'images/lifestyle/g19-antique-bricks-lifestyle.jpg',
-      productIds: [],
-      status: 'coming',
-    },
+  var DEFAULT_CATEGORIES = [
+    'OUTDOOR COOKING',
+    'DOG GARDEN',
+    'OUTDOOR SAUNA',
+    'GARDEN FURNITURE',
+    'GARDEN ITEMS',
+    'DIY SUPPORT',
   ];
 
   function formatYen(value) {
@@ -90,6 +30,15 @@
       return '価格はお問い合わせください';
     }
     return '¥' + value.toLocaleString('ja-JP') + '（税込）';
+  }
+
+  function formatSize(size) {
+    if (!size || typeof size !== 'object') return '仕様はお問い合わせください';
+    var parts = [];
+    if (typeof size.width_mm === 'number') parts.push('W' + size.width_mm);
+    if (typeof size.depth_mm === 'number') parts.push('D' + size.depth_mm);
+    if (typeof size.height_mm === 'number') parts.push('H' + size.height_mm);
+    return parts.length ? parts.join(' x ') + 'mm' : '仕様はお問い合わせください';
   }
 
   function text(value) {
@@ -104,7 +53,7 @@
   }
 
   function detailUrl(productId) {
-    return DETAIL_PAGE + '?id=' + encodeURIComponent(productId);
+    return 'garden-products/' + encodeURIComponent(productId) + '.html';
   }
 
   function loadProducts() {
@@ -118,18 +67,74 @@
     }, Promise.reject());
   }
 
-  function renderHero() {
+  function siteConfig(data) {
+    return (data && data.garden_living) || {};
+  }
+
+  function productGarden(product) {
+    return (product && product.garden_living) || {};
+  }
+
+  function productIsPublished(product) {
+    var gl = productGarden(product);
+    var basic = product.basic || {};
+    return gl.publish !== false && basic.status !== '廃番';
+  }
+
+  function sceneFromProduct(product) {
+    var gl = productGarden(product);
+    var scene = gl.scene || {};
+    if (!scene.id || !scene.image || gl.publish === false) return null;
+    return {
+      id: scene.id,
+      category: scene.category || ((product.basic || {}).category || 'GARDEN LIVING'),
+      title: scene.title || ((product.seo || {}).catch_copy || (product.basic || {}).product_name),
+      copy: scene.copy || ((product.seo || {}).description_100 || ''),
+      quote: scene.quote || '「今日は外で過ごそう。」',
+      image: scene.image,
+      mobileImage: scene.mobile_image || scene.mobileImage || '',
+      productIds: scene.product_ids || scene.productIds || [product.id],
+      detailProductId: product.id,
+      status: 'available',
+      order: typeof scene.order === 'number' ? scene.order : 999,
+    };
+  }
+
+  function buildScenes(products, config) {
+    var scenes = products
+      .map(sceneFromProduct)
+      .filter(Boolean)
+      .sort(function (a, b) { return a.order - b.order; });
+    var planned = Array.isArray(config.planned_scenes) ? config.planned_scenes : [];
+    return scenes.concat(planned.map(function (scene, index) {
+      return {
+        id: scene.id || ('planned-' + index),
+        category: scene.category || 'Garden Living',
+        title: scene.title || '準備中のシーン',
+        copy: scene.copy || '掲載準備が整い次第、追加します。',
+        quote: scene.quote || '「次は何をしよう。」',
+        image: scene.image || DEFAULT_HERO.url,
+        mobileImage: scene.mobile_image || '',
+        productIds: scene.product_ids || [],
+        status: 'coming',
+        order: typeof scene.order === 'number' ? scene.order : 999,
+      };
+    }));
+  }
+
+  function renderHero(config) {
     if (!heroVisual || !heroCarousel) return;
+    var hero = (config && config.hero) || DEFAULT_HERO;
     heroCarousel.textContent = '';
     heroVisual.classList.remove('is-loading');
     heroVisual.classList.add('has-images');
     heroCarousel.innerHTML =
       '<figure class="hero-slide is-active">' +
         '<picture>' +
-          '<source media="(max-width: 720px)" srcset="' + HERO.mobileUrl + '">' +
-          '<img src="' + HERO.url + '" alt="' + HERO.label + '">' +
+          '<source media="(max-width: 720px)" srcset="' + (hero.mobile_url || hero.mobileUrl || hero.url) + '">' +
+          '<img src="' + hero.url + '" alt="' + text(hero.label) + '">' +
         '</picture>' +
-        '<figcaption>' + HERO.label + '</figcaption>' +
+        '<figcaption>' + text(hero.label) + '</figcaption>' +
       '</figure>';
   }
 
@@ -177,25 +182,40 @@
     var basic = product.basic || {};
     var seo = product.seo || {};
     var pricing = product.pricing || {};
+    var gl = productGarden(product);
+    var indexCopy = gl.index_copy || seo.description_30 || seo.catch_copy;
     var article = document.createElement('article');
     article.className = 'catalog-card';
     article.innerHTML =
       '<p class="product-model">' + text(basic.category) + '</p>' +
       '<h3>' + text(basic.product_name) + '</h3>' +
-      '<p>' + text(seo.description_30 || seo.catch_copy) + '</p>' +
+      '<p>' + text(indexCopy) + '</p>' +
+      '<div class="catalog-specs">' +
+        '<span>サイズ/仕様</span>' +
+        '<strong>' + formatSize(product.size) + '</strong>' +
+        '<span>メーカー</span>' +
+        '<strong>' + text(basic.manufacturer) + '</strong>' +
+      '</div>' +
       '<div class="catalog-meta">' +
         '<span>' + text(basic.model_number) + '</span>' +
         '<strong>' + formatYen(pricing.manufacturer_price_in_tax) + '</strong>' +
       '</div>' +
-      '<a class="product-cta" href="' + detailUrl(product.id) + '">商品ページへ</a>';
+      '<div class="catalog-actions">' +
+        '<a class="product-cta" href="' + detailUrl(product.id) + '">商品ページへ</a>' +
+        '<a class="product-consult" href="#contact">この商品について相談する</a>' +
+      '</div>';
     return article;
   }
 
-  function render(products) {
+  function render(data) {
+    var config = siteConfig(data);
+    var products = (Array.isArray(data.products) ? data.products : []).filter(productIsPublished);
     var productsById = productMap(products);
-    renderHero();
+    var scenes = buildScenes(products, config);
+    var categories = Array.isArray(config.categories) && config.categories.length ? config.categories : DEFAULT_CATEGORIES;
+    renderHero(config);
     sceneGrid.textContent = '';
-    SCENES.forEach(function (scene) {
+    scenes.forEach(function (scene) {
       sceneGrid.appendChild(createSceneCard(scene, productsById));
     });
 
@@ -203,6 +223,13 @@
     products.forEach(function (product) {
       catalogGrid.appendChild(createCatalogCard(product));
     });
+
+    var strip = document.querySelector('.category-strip');
+    if (strip) {
+      strip.innerHTML = categories.map(function (category) {
+        return '<span>' + text(category) + '</span>';
+      }).join('');
+    }
 
     loadStatus.textContent = 'シーンを読み込みました。';
     window.setTimeout(function () {
@@ -212,11 +239,11 @@
 
   loadProducts()
     .then(function (data) {
-      render(Array.isArray(data.products) ? data.products : []);
+      render(data || {});
       console.info('[Garden Living] loaded products:', Array.isArray(data.products) ? data.products.length : 0);
     })
     .catch(function (error) {
-      renderHero();
+      renderHero({});
       if (loadStatus) {
         loadStatus.textContent = '商品マスタを読み込めませんでした。ローカル確認時は簡易サーバーで開いてください。';
       }
