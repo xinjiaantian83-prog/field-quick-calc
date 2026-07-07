@@ -66,6 +66,7 @@
     activeCategory: 'すべて',
     query: '',
     showSaved: false,
+    showCatalog: false,
     savedIds: [],
   };
 
@@ -322,6 +323,21 @@
     });
   }
 
+  function renderCatalog(list) {
+    if (!catalogGrid) return;
+    if (!state.showCatalog) {
+      catalogGrid.innerHTML =
+        '<div class="catalog-intro">' +
+          '<p class="eyebrow">Select First</p>' +
+          '<h3>カテゴリや検索から、必要な商品だけ表示します。</h3>' +
+          '<p>トップでは商品カードを並べすぎず、庭の使い方やカテゴリを選ぶ入口として整理しています。</p>' +
+        '</div>';
+      if (resultCount) resultCount.textContent = 'カテゴリを選ぶか、検索すると商品一覧を表示します。';
+      return;
+    }
+    renderCards(catalogGrid, list);
+  }
+
   function categoryCount(category) {
     if (category === 'すべて') return state.products.length;
     return state.products.filter(function (product) { return product.category === category; }).length;
@@ -348,6 +364,7 @@
       button.addEventListener('click', function () {
         state.activeCategory = button.dataset.category || 'すべて';
         state.showSaved = false;
+        state.showCatalog = true;
         track('gl_category_click', {
           category: state.activeCategory,
           category_count: categoryCount(state.activeCategory),
@@ -378,6 +395,7 @@
         if (searchInput) searchInput.value = state.query;
         state.activeCategory = 'すべて';
         state.showSaved = false;
+        state.showCatalog = true;
         renderAll();
         document.getElementById('catalog').scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
@@ -399,13 +417,15 @@
   function renderAll() {
     var list = filteredProducts();
     renderCategories();
-    renderCards(catalogGrid, list);
+    renderCatalog(list);
     if (resultCount) {
-      var prefix = state.showSaved ? '保存した商品 ' : state.activeCategory === 'すべて' ? '' : state.activeCategory + ' ';
-      resultCount.textContent = prefix + list.length + '件の商品を表示中';
+      if (state.showCatalog) {
+        var prefix = state.showSaved ? '保存した商品 ' : state.activeCategory === 'すべて' ? '' : state.activeCategory + ' ';
+        resultCount.textContent = prefix + list.length + '件の商品を表示中';
+      }
     }
-    renderCards(newGrid, state.products.slice().sort(function (a, b) { return b.order - a.order; }).slice(0, 6));
-    renderCards(popularGrid, state.products.slice().sort(function (a, b) { return b.priority - a.priority; }).slice(0, 6));
+    if (newGrid) renderCards(newGrid, state.products.slice().sort(function (a, b) { return b.order - a.order; }).slice(0, 6));
+    if (popularGrid) renderCards(popularGrid, state.products.slice().sort(function (a, b) { return b.priority - a.priority; }).slice(0, 6));
     renderMakers();
     updateSavedCount();
   }
@@ -414,6 +434,9 @@
     if (searchInput) {
       searchInput.addEventListener('input', function () {
         state.query = searchInput.value.trim();
+        state.showSaved = false;
+        state.activeCategory = 'すべて';
+        state.showCatalog = state.query.length > 0;
         renderAll();
       });
     }
@@ -421,6 +444,7 @@
       savedFilter.addEventListener('click', function () {
         state.showSaved = true;
         state.activeCategory = 'すべて';
+        state.showCatalog = true;
         renderAll();
         track('gl_saved_list_view', { saved_count: state.savedIds.length });
         document.getElementById('catalog').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -431,6 +455,7 @@
         state.query = '';
         state.activeCategory = 'すべて';
         state.showSaved = false;
+        state.showCatalog = true;
         if (searchInput) searchInput.value = '';
         renderAll();
         document.getElementById('catalog').scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -456,6 +481,24 @@
           track('gl_product_like', productParams(product));
         }
         renderAll();
+        return;
+      }
+
+      var sceneCategoryButton = event.target.closest('.scene-category-button');
+      if (sceneCategoryButton) {
+        state.activeCategory = sceneCategoryButton.dataset.category || 'すべて';
+        state.showSaved = false;
+        state.showCatalog = true;
+        if (searchInput) {
+          state.query = '';
+          searchInput.value = '';
+        }
+        track('gl_category_click', {
+          category: state.activeCategory,
+          category_count: categoryCount(state.activeCategory),
+        });
+        renderAll();
+        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth', block: 'start' });
         return;
       }
 

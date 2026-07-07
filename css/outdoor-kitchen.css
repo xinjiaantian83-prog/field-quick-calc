@@ -657,6 +657,91 @@ h1 {
   -webkit-line-clamp: 2;
 }
 
+.lifestyle-scene-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.lifestyle-scene-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--line-soft);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(25, 22, 18, 0.06);
+}
+
+.lifestyle-scene-card figure {
+  margin: 0;
+  overflow: hidden;
+  background: #e7e0d5;
+}
+
+.lifestyle-scene-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform 0.24s ease;
+}
+
+.lifestyle-scene-card > div {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.lifestyle-scene-card h3,
+.catalog-intro h3 {
+  margin: 0;
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.35;
+  font-weight: 900;
+}
+
+.lifestyle-scene-card p,
+.catalog-intro p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.scene-category-button {
+  width: fit-content;
+  min-height: 42px;
+  margin-top: 4px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #171717;
+  color: #fff;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease;
+}
+
+.lifestyle-scene-card:hover img {
+  transform: scale(1.025);
+}
+
+.scene-category-button:hover {
+  background: #2a241f;
+  box-shadow: 0 10px 20px rgba(25, 22, 18, 0.12);
+  transform: translateY(-1px);
+}
+
+.catalog-intro {
+  grid-column: 1 / -1;
+  padding: 24px 20px;
+  border: 1px dashed rgba(25, 22, 18, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
 .scene-grid {
   display: grid;
   gap: 28px;
@@ -1209,6 +1294,10 @@ h1 {
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
   }
 
+  .lifestyle-scene-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .scene-card:nth-child(even) .scene-photo {
     order: 2;
   }
@@ -1311,5 +1400,13 @@ h1 {
 
   .category-card {
     min-height: 178px;
+  }
+
+  .lifestyle-scene-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lifestyle-scene-card img {
+    aspect-ratio: 16 / 9;
   }
 }
