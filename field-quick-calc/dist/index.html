@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Field Quick Calc</title>
+  <link rel="icon" href="icons/icon.png">
+  <link rel="apple-touch-icon" href="icons/icon.png">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="app">
+    <section id="home" class="screen active">
+      <header class="app-header">
+        <img src="icons/icon.png" alt="" class="app-icon" aria-hidden="true">
+        <div>
+          <p class="eyebrow">GENBA TOOLBOX</p>
+          <h1>Field Quick Calc</h1>
+          <p class="tagline">Fast numbers for the jobsite.</p>
+        </div>
+      </header>
+
+      <main class="home-grid" aria-label="Main tools">
+        <button class="tool-card" data-open="concrete">
+          <span class="tool-num">01</span>
+          <span class="tool-ico slab-ico"></span>
+          <span class="tool-title">Tapered Shape</span>
+          <span class="tool-sub">Sloped / trapezoid shapes</span>
+        </button>
+        <button class="tool-card" data-open="radius">
+          <span class="tool-num">02</span>
+          <span class="tool-ico radius-ico"></span>
+          <span class="tool-title">Radius / Circle</span>
+          <span class="tool-sub">Arc + diameter</span>
+        </button>
+        <button class="tool-card" data-open="slope">
+          <span class="tool-num">03</span>
+          <span class="tool-ico slope-ico"></span>
+          <span class="tool-title">Slope</span>
+          <span class="tool-sub">Rise, run, angle</span>
+        </button>
+        <button class="tool-card" data-open="stairs">
+          <span class="tool-num">04</span>
+          <span class="tool-ico stairs-ico"></span>
+          <span class="tool-title">Stairs</span>
+          <span class="tool-sub">Simple layout</span>
+        </button>
+      </main>
+
+      <nav class="bottom-actions" aria-label="More tools">
+        <button data-open="materials">Material Weight Table</button>
+        <button data-open="notes">Notes</button>
+      </nav>
+    </section>
+
+    <section id="concrete" class="screen">
+      <button class="back" data-open="home">Back</button>
+      <header class="tool-header">
+        <p class="eyebrow">Angled / uneven shapes</p>
+        <h2>Tapered Shape</h2>
+        <p>Pick the side that runs out, then check widths by height.</p>
+      </header>
+
+      <div class="slope-switch" aria-label="Taper side">
+        <button class="active" data-taper-side="left">
+          <span class="mini-section mini-left"></span>
+          <strong>Left</strong>
+        </button>
+        <button data-taper-side="right">
+          <span class="mini-section mini-right"></span>
+          <strong>Right</strong>
+        </button>
+        <button data-taper-side="both">
+          <span class="mini-section mini-both"></span>
+          <strong>Both</strong>
+        </button>
+      </div>
+
+      <div class="panel">
+        <div class="input-grid">
+          <label>Total height <span>ft</span><input id="conTotalHeightFt" type="number" inputmode="decimal" placeholder="5"></label>
+          <label>Top width <span>ft</span><input id="conTopWidthFt" type="number" inputmode="decimal" placeholder="2"></label>
+          <label>Side slope ratio <span>H:V</span><input id="conSlopeRatio" type="number" inputmode="decimal" placeholder="1.5"></label>
+          <label>Length <span>ft</span><input id="conLenFt" type="number" inputmode="decimal" placeholder="12"></label>
+          <label>Check height 1 <span>ft from top</span><input id="conCheckH1Ft" type="number" inputmode="decimal" placeholder="1"></label>
+          <label>Check height 2 <span>ft from top</span><input id="conCheckH2Ft" type="number" inputmode="decimal" placeholder="2"></label>
+          <label>Check height 3 <span>ft from top</span><input id="conCheckH3Ft" type="number" inputmode="decimal" placeholder="4"></label>
+        </div>
+      </div>
+
+      <div class="diagram tapered-diagram">
+        <svg viewBox="0 0 360 275" role="img" aria-label="Tapered section diagram">
+          <polygon id="taperShape" points="" class="section-fill"/>
+          <line id="taperTopLine" class="measure"/>
+          <line id="taperBottomLine" class="measure"/>
+          <line id="taperHeightLine" class="height-line"/>
+          <line id="checkLine1" class="check-line check-1"/>
+          <line id="checkLine2" class="check-line check-2"/>
+          <line id="checkLine3" class="check-line check-3"/>
+          <text id="taperTopLabel" class="section-label">Top width</text>
+          <text id="taperBottomLabel" class="section-label">Bottom width</text>
+          <text id="taperHeightLabel" class="height-label">Total height</text>
+          <text id="checkLabel1" class="check-label check-1-text">h1</text>
+          <text id="checkLabel2" class="check-label check-2-text">h2</text>
+          <text id="checkLabel3" class="check-label check-3-text">h3</text>
+          <text x="206" y="151" class="section-note">section view</text>
+        </svg>
+      </div>
+
+      <div class="results">
+        <div class="result big"><span>Estimated volume</span><strong id="conVolume">--</strong><em>cu ft</em></div>
+        <div class="result"><span>Cubic yards</span><strong id="conYards">--</strong><em>cu yd</em></div>
+        <div class="result"><span>Bottom width</span><strong id="conBottomWidth">--</strong><em>ft</em></div>
+        <div class="result"><span>Width at h1</span><strong id="conWidthH1">--</strong><em>ft</em></div>
+        <div class="result"><span>Width at h2</span><strong id="conWidthH2">--</strong><em>ft</em></div>
+        <div class="result"><span>Width at h3</span><strong id="conWidthH3">--</strong><em>ft</em></div>
+        <div class="result"><span>Cross section area</span><strong id="conArea">--</strong><em>sq ft</em></div>
+      </div>
+      <p class="disclaimer">Results are estimates only. Always follow local codes, drawings, site conditions, and professional judgment.</p>
+    </section>
+
+    <section id="radius" class="screen">
+      <button class="back" data-open="home">Back</button>
+      <header class="tool-header">
+        <p class="eyebrow">Round layouts</p>
+        <h2>Radius / Circle</h2>
+        <p>Arc length from chord and height, plus circle checks.</p>
+      </header>
+
+      <div class="segmented">
+        <button class="active" data-radius-mode="arc">Arc</button>
+        <button data-radius-mode="circle">Circle</button>
+      </div>
+
+      <div id="arcMode">
+        <div class="panel">
+          <div class="input-grid">
+            <label>Chord <span>ft</span><input id="arcChordFt" type="number" inputmode="decimal" placeholder="8"></label>
+            <label>Height <span>in</span><input id="arcHeightIn" type="number" inputmode="decimal" placeholder="12"></label>
+          </div>
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 360 180" role="img" aria-label="Arc diagram">
+            <path id="arcPath" d="M70 125 Q180 42 290 125" class="line-glow fill-none"/>
+            <line x1="70" y1="125" x2="290" y2="125" class="line"/>
+            <line x1="180" y1="125" x2="180" y2="56" class="measure"/>
+            <text x="155" y="148">Chord</text>
+            <text x="190" y="91">Height</text>
+            <text x="140" y="48">Arc length</text>
+          </svg>
+        </div>
+        <div class="results">
+          <div class="result big"><span>Arc length</span><strong id="arcLength">--</strong><em>ft</em></div>
+          <div class="result"><span>Estimated radius</span><strong id="arcRadius">--</strong><em>ft</em></div>
+          <div class="result"><span>Extra over chord</span><strong id="arcExtra">--</strong><em>in</em></div>
+        </div>
+      </div>
+
+      <div id="circleMode" hidden>
+        <div class="panel">
+          <label class="single-input">Diameter <span>ft</span><input id="circleDiameterFt" type="number" inputmode="decimal" placeholder="6"></label>
+        </div>
+        <div class="diagram">
+          <svg viewBox="0 0 360 180" role="img" aria-label="Circle diagram">
+            <circle cx="180" cy="90" r="62" class="shape-fill circle-stroke"/>
+            <line x1="118" y1="90" x2="242" y2="90" class="line"/>
+            <line x1="180" y1="90" x2="242" y2="90" class="measure"/>
+            <text x="150" y="78">Diameter</text>
+            <text x="198" y="112">Radius</text>
+          </svg>
+        </div>
+        <div class="results">
+          <div class="result big"><span>Circumference</span><strong id="circleCirc">--</strong><em>ft</em></div>
+          <div class="result"><span>Radius</span><strong id="circleRadius">--</strong><em>ft</em></div>
+          <div class="result"><span>Area</span><strong id="circleArea">--</strong><em>sq ft</em></div>
+        </div>
+      </div>
+      <p class="disclaimer">Results are estimates only. Always follow local codes, drawings, site conditions, and professional judgment.</p>
+    </section>
+
+    <section id="slope" class="screen">
+      <button class="back" data-open="home">Back</button>
+      <header class="tool-header">
+        <p class="eyebrow">Roof / ramp / driveway</p>
+        <h2>Slope</h2>
+        <p>Quick slope check from rise and run.</p>
+      </header>
+      <div class="panel">
+        <div class="input-grid">
+          <label>Rise <span>in</span><input id="slopeRiseIn" type="number" inputmode="decimal" placeholder="24"></label>
+          <label>Run <span>ft</span><input id="slopeRunFt" type="number" inputmode="decimal" placeholder="12"></label>
+        </div>
+      </div>
+      <div class="diagram">
+        <svg viewBox="0 0 360 180" role="img" aria-label="Slope diagram">
+          <polygon points="65,130 300,130 300,55" class="shape-fill"/>
+          <line x1="65" y1="130" x2="300" y2="55" class="line-glow"/>
+          <line x1="65" y1="130" x2="300" y2="130" class="line"/>
+          <line x1="300" y1="130" x2="300" y2="55" class="measure"/>
+          <text x="162" y="152">Run</text>
+          <text x="309" y="96">Rise</text>
+          <text x="165" y="84">Length</text>
+        </svg>
+      </div>
+      <div class="results">
+        <div class="result big"><span>Slope length</span><strong id="slopeLength">--</strong><em>ft</em></div>
+        <div class="result"><span>Angle</span><strong id="slopeAngle">--</strong><em>deg</em></div>
+        <div class="result"><span>Pitch</span><strong id="slopePitch">--</strong><em>in / ft</em></div>
+      </div>
+      <p class="disclaimer">Results are estimates only. Always follow local codes, drawings, site conditions, and professional judgment.</p>
+    </section>
+
+    <section id="stairs" class="screen">
+      <button class="back" data-open="home">Back</button>
+      <header class="tool-header">
+        <p class="eyebrow">Deck / outdoor steps</p>
+        <h2>Stairs</h2>
+        <p>Simple stair layout estimate.</p>
+      </header>
+      <div class="panel">
+        <div class="input-grid">
+          <label>Total rise <span>in</span><input id="stairTotalRise" type="number" inputmode="decimal" placeholder="42"></label>
+          <label>Steps <span>count</span><input id="stairSteps" type="number" inputmode="numeric" placeholder="6"></label>
+          <label>Tread depth <span>in</span><input id="stairTread" type="number" inputmode="decimal" value="10"></label>
+        </div>
+      </div>
+      <div class="diagram stairs-diagram">
+        <svg viewBox="0 0 360 220" role="img" aria-label="Stair diagram">
+          <polyline id="stairShape" points="" class="line-glow fill-none"/>
+          <line id="stairStringerLine" class="stringer-guide"/>
+          <line id="stairRunLine" x1="58" y1="154" x2="293" y2="154" class="line"/>
+          <line id="stairRiseLine" x1="293" y1="154" x2="293" y2="50" class="measure"/>
+          <line id="stairTreadLine" class="step-measure"/>
+          <line id="stairStepRiseLine" class="step-measure"/>
+          <text id="stairRunLabel" x="137" y="179">Total run</text>
+          <text id="stairRiseLabel" x="302" y="103">Total rise</text>
+          <text id="stairTreadLabel" class="step-label">Tread</text>
+          <text id="stairStepRiseLabel" class="step-label">Rise</text>
+          <text id="stairCountLabel" class="section-note" x="62" y="28">6 steps shown</text>
+        </svg>
+      </div>
+      <p id="stairNotice" class="soft-notice" hidden></p>
+      <div class="results">
+        <div class="result big"><span>Rise per step</span><strong id="stairRiseEach">--</strong><em>in</em></div>
+        <div class="result"><span>Total run</span><strong id="stairRun">--</strong><em>ft</em></div>
+        <div class="result"><span>Stringer length</span><strong id="stairStringer">--</strong><em>ft</em></div>
+      </div>
+      <p class="disclaimer">Results are estimates only. Always follow local codes, drawings, site conditions, and professional judgment.</p>
+    </section>
+
+    <section id="materials" class="screen">
+      <button class="back" data-open="home">Back</button>
+      <header class="tool-header">
+        <p class="eyebrow">Quick reference</p>
+        <h2>Material Weight Table</h2>
+        <p>Typical field estimates. Confirm actual supplier data.</p>
+      </header>
+      <div class="table-card">
+        <div><strong>Concrete</strong><span>140 - 150 lb / cu ft</span></div>
+        <div><strong>Gravel</strong><span>95 - 120 lb / cu ft</span></div>
+        <div><strong>Sand</strong><span>90 - 110 lb / cu ft</span></div>
+        <div><strong>Asphalt</strong><span>140 - 150 lb / cu ft</span></div>
+        <div><strong>Soil</strong><span>75 - 125 lb / cu ft</span></div>
+      </div>
+      <p class="disclaimer">Results are estimates only. Always follow local codes, drawings, site conditions, and professional judgment.</p>
+    </section>
+
+    <section id="notes" class="screen">
+      <button class="back" data-open="home">Back</button>
+      <header class="tool-header">
+        <p class="eyebrow">Job notes</p>
+        <h2>Notes</h2>
+        <p>Saved on this device.</p>
+      </header>
+      <textarea id="notesText" class="notes" placeholder="Measurements, cut notes, bag counts..."></textarea>
+      <button id="clearNotes" class="danger">Clear notes</button>
+    </section>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
